@@ -19,7 +19,7 @@
                     <div class="events-top">
                         <div class="col-md-5  w3ls fea-left">
                             <div class="w3agile_special_deals_grid_left_grid">
-                                <a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
+                                <a href="singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
                                                                          alt=""/></a>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
                                 interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
                                 are also reproduced in their exact original form.</p>
-                            <a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span
+                            <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
                                     class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                     aria-hidden="true"></span></a>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="events-top">
                         <div class="col-md-5  w3ls fea-left">
                             <div class="w3agile_special_deals_grid_left_grid">
-                                <a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
+                                <a href="singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
                                                                          alt=""/></a>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
                                 interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
                                 are also reproduced in their exact original form.</p>
-                            <a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span
+                            <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
                                     class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                     aria-hidden="true"></span></a>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="events-top">
                         <div class="col-md-5  w3ls fea-left">
                             <div class="w3agile_special_deals_grid_left_grid">
-                                <a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
+                                <a href="singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
                                                                          alt=""/></a>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
                                 interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
                                 are also reproduced in their exact original form.</p>
-                            <a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span
+                            <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
                                     class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                     aria-hidden="true"></span></a>
                         </div>
@@ -73,7 +73,7 @@
                     <div class="events-top">
                         <div class="col-md-5  w3ls fea-left">
                             <div class="w3agile_special_deals_grid_left_grid">
-                                <a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
+                                <a href="singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
                                                                          alt=""/></a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
                                 interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
                                 are also reproduced in their exact original form.</p>
-                            <a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span
+                            <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
                                     class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                     aria-hidden="true"></span></a>
                         </div>
@@ -91,7 +91,7 @@
                     <div class="events-top">
                         <div class="col-md-5  w3ls fea-left">
                             <div class="w3agile_special_deals_grid_left_grid">
-                                <a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
+                                <a href="singlepage.jsp"><img src="images/g8.jpg" class="img-responsive"
                                                                          alt=""/></a>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
                                 interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
                                 are also reproduced in their exact original form.</p>
-                            <a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span
+                            <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
                                     class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                     aria-hidden="true"></span></a>
                         </div>

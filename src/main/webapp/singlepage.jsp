@@ -41,33 +41,33 @@
                 <div class="single-left2">
                     <div class="col-md-6 single-left2-left">
                         <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">At
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">At
                                 vero eos et accusamus iusto</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Sed ut
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Sed ut
                                 perspiciatis unde omnis iste</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Accusantium
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Accusantium
                                 doloremque laudantium</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Vel
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Vel
                                 illum qui dolorem eum fugiat quo</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Quis
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Quis
                                 autem vel eum iure reprehenderit</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Neque
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Neque
                                 porro quisquam est, qui dolorem</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6 single-left2-left">
                         <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">At
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">At
                                 vero eos et accusamus et iusto</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Sed ut
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Sed ut
                                 perspiciatis unde omnis iste</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Accusantium
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Accusantium
                                 doloremque laudantium</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Vel
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Vel
                                 illum qui dolorem eum fugiat quo</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Quis
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Quis
                                 autem vel eum iure reprehenderit</a></li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.singlepage.jsp">Neque
+                            <li><i class="fa fa-check" aria-hidden="true"></i><a href="singlepage.jsp">Neque
                                 porro quisquam est, qui dolorem</a></li>
                         </ul>
                     </div>
