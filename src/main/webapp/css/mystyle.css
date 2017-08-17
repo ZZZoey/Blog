@@ -1,0 +1,54 @@
+.footer-title{
+    display: inline-block;
+    padding:0px 6px 5px 0px;
+    font-size: 22px;
+    font-weight: normal;
+    border-bottom: #FFAC3A 2px solid;
+}
+.footer-block{
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.footer-block .kuang{
+    float: left;
+    width: 100%;
+    padding-right: 20px;
+    height: 100%;
+    overflow-y: scroll;
+}
+.footer-block .kuang::-webkit-scrollbar {
+    display: none;
+}
+.footer-block .block-bar{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px dashed #666;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.footer-block .box{
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #d3d3d3;
+}
+.footer-block .box span{
+    width: 80px;
+    color: #e29933;
+}
+.agileits_recent_posts_gridr h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

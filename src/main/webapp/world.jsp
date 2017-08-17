@@ -7,7 +7,6 @@ pageEncoding="UTF-8"%>
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" /><!-- fontawesome -->     
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" /><!-- Bootstrap stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
 <!-- stylesheet -->
 <!-- meta tags -->
@@ -92,12 +91,19 @@ $(document).ready(function(){
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav">
-					<li><a class="active" href="index.index.jsp">首页</a></li>
-					<li><a href="study.study.ｊｓｐ">学习笔记</a></li>
+					<li><a href="index.index.jsp">首页</a></li>
+					  <li><a href="study.study.ｊｓｐ">学习笔记</a></li>
 					<li><a href="program.program.jsp">项目经验</a></li>
+					<!--<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">技术探讨<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+					  <li><a href="icons.html">Icons Page</a></li>
+						<li><a href="typo.html">Typography</a></li>
+					  </ul>
+					</li>-->
 					<li><a href="mood.mood.jsp">杂文随笔</a></li>
-					<li><a href="world.world.jsp">看世界</a></li>
-					<li><a href="message.message.jsp">留言墙</a></li>
+					<li><a class="active" href="world.world.jsp">看世界</a></li>
+					<li><a href="message.message.jsp">留言板</a></li>
 					<li><a href="about.about.jsp">About Me</a></li>
 				  </ul>
 				</div><!-- /.navbar-collapse -->
@@ -124,149 +130,26 @@ $(document).ready(function(){
 		<div class="banner-btm-agile">
 		<!-- //最新博文 -->
 			<div class="col-md-9 btm-wthree-left">
-				<div class="wthree-top">
-					<div class="w3agile-top">
-						<div class="w3agile_special_deals_grid_left_grid">
-							<a href="singlepage.singlepage.jsp"><img src="images/4.jpg" class="img-responsive" alt="" /></a>
-						</div>
-						<div class="w3agile-middle">
-						<ul>
-							<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
-							<li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>201 LIKES</a></li>
-							<li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>15 COMMENTS</a></li>
-						</ul>
-					</div>
-					</div>
-					
-					<div class="w3agile-bottom">
-						<div class="col-md-12 w3agile-right">
-							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
-							<a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span class="glyphicon agileits w3layouts glyphicon-arrow-right" aria-hidden="true"></span></a>
-						</div>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-				<!-- wthree-top-1 -->
 				<div class="wthree-top-1">
 					<div class="w3agile-top">
-						<section class="slider">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<div class="w3agile_special_deals_grid_left_grid">
-									<a href="singlepage.singlepage.jsp"><img src="images/2.jpg" class="img-responsive" alt="" /></a>
-								</div>
-							</li>
-							<li>
-								<div class="w3agile_special_deals_grid_left_grid">
-									<a href="singlepage.singlepage.jsp"><img src="images/3.jpg" class="img-responsive" alt="" /></a>
-								</div>
-							</li>
-							<li>
-								<div class="w3agile_special_deals_grid_left_grid">
-									<a href="singlepage.singlepage.jsp"><img src="images/3.jpg" class="img-responsive" alt="" /></a>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-			<!-- flexSlider -->
-				<script defer src="js/jquery.flexslider.js"></script>
-				<script type="text/javascript">
-					$(window).load(function(){
-					  $('.flexslider').flexslider({
-						animation: "slide",
-						start: function(slider){
-						  $('body').removeClass('loading');
-						}
-					  });
-					});
-				</script>
-			<!-- //flexSlider -->
-
-						<div class="w3agile-middle">
-						<ul>
-							<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
-							<li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>201 LIKES</a></li>
-							<li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>15 COMMENTS</a></li>
-
-						</ul>
-					</div>
-					</div>
-
-					<div class="w3agile-bottom">
-						<div class="col-md-9 w3agile-right">
-							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
-							<a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span class="glyphicon agileits w3layouts glyphicon-arrow-right" aria-hidden="true"></span></a>
-						</div>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-				<!-- //wthree-top-1 -->
-				<!-- wthree-top-1 -->
-				<div class="wthree-top">
-					<div class="w3agile-top">
-						<div class="w3agile_special_deals_grid_left_grid">
-							<a href="singlepage.singlepage.jsp"><img src="images/4.jpg" class="img-responsive" alt="" /></a>
-						</div>
-						<div class="w3agile-middle">
-							<ul>
-								<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
-								<li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>201 LIKES</a></li>
-								<li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>15 COMMENTS</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="w3agile-bottom">
-						<div class="col-md-12 w3agile-right">
-							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
-							<a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span class="glyphicon agileits w3layouts glyphicon-arrow-right" aria-hidden="true"></span></a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<!-- //wthree-top-1 -->
-				<div class="wthree-top-1">
-					<div class="w3agile-top">
-						<section class="slider">
-							<div class="flexslider">
-								<ul class="slides">
-									<li>
-										<div class="w3agile_special_deals_grid_left_grid">
-											<a href="singlepage.singlepage.jsp"><img src="images/2.jpg" class="img-responsive" alt="" /></a>
-										</div>
-									</li>
-									<li>
-										<div class="w3agile_special_deals_grid_left_grid">
-											<a href="singlepage.singlepage.jsp"><img src="images/3.jpg" class="img-responsive" alt="" /></a>
-										</div>
-									</li>
-									<li>
-										<div class="w3agile_special_deals_grid_left_grid">
-											<a href="singlepage.singlepage.jsp"><img src="images/3.jpg" class="img-responsive" alt="" /></a>
-										</div>
-									</li>
-								</ul>
+						<div class="col-md-6 w3-lft">
+							<div class="w3agile_special_deals_grid_left_grid">
+								<a href="singlepage.singlepage.jsp"><img src="images/5.jpg" class="img-responsive" alt="" /></a>
 							</div>
-						</section>
-						<!-- flexSlider -->
-						<script defer src="js/jquery.flexslider.js"></script>
-						<script type="text/javascript">
-                            $(window).load(function(){
-                                $('.flexslider').flexslider({
-                                    animation: "slide",
-                                    start: function(slider){
-                                        $('body').removeClass('loading');
-                                    }
-                                });
-                            });
-						</script>
-						<!-- //flexSlider -->
-
+						</div>
+						<div class="col-md-6 w3-rgt">
+							<div class="w3-rgt-top">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g6.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+							<div class="w3-rgt-top1">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
 						<div class="w3agile-middle">
 							<ul>
 								<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
@@ -278,6 +161,9 @@ $(document).ready(function(){
 					</div>
 
 					<div class="w3agile-bottom">
+						<div class="col-md-3 w3agile-left">
+							<h5>Sit amet consectetur</h5>
+						</div>
 						<div class="col-md-9 w3agile-right">
 							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
@@ -287,6 +173,93 @@ $(document).ready(function(){
 					</div>
 				</div>
 				<!-- wthree-top-1 -->
+				<div class="wthree-top-1">
+					<div class="w3agile-top">
+						<div class="col-md-6 w3-lft">
+							<div class="w3agile_special_deals_grid_left_grid">
+								<a href="singlepage.singlepage.jsp"><img src="images/5.jpg" class="img-responsive" alt="" /></a>
+							</div>
+						</div>
+						<div class="col-md-6 w3-rgt">
+							<div class="w3-rgt-top">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g6.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+							<div class="w3-rgt-top1">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="w3agile-middle">
+							<ul>
+								<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
+								<li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>201 LIKES</a></li>
+								<li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>15 COMMENTS</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="w3agile-bottom">
+						<div class="col-md-3 w3agile-left">
+							<h5>Sit amet consectetur</h5>
+						</div>
+						<div class="col-md-9 w3agile-right">
+							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
+							<a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span class="glyphicon agileits w3layouts glyphicon-arrow-right" aria-hidden="true"></span></a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- //wthree-top-1 -->
+				<!-- wthree-top-1 -->
+				<div class="wthree-top-1">
+					<div class="w3agile-top">
+						<div class="col-md-6 w3-lft">
+							<div class="w3agile_special_deals_grid_left_grid">
+								<a href="singlepage.singlepage.jsp"><img src="images/5.jpg" class="img-responsive" alt="" /></a>
+							</div>
+						</div>
+						<div class="col-md-6 w3-rgt">
+							<div class="w3-rgt-top">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g6.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+							<div class="w3-rgt-top1">
+								<div class="w3agile_special_deals_grid_left_grid">
+									<a href="singlepage.singlepage.jsp"><img src="images/g8.jpg" class="img-responsive" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="w3agile-middle">
+							<ul>
+								<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>FEB 15,2017</a></li>
+								<li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>201 LIKES</a></li>
+								<li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>15 COMMENTS</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="w3agile-bottom">
+						<div class="col-md-3 w3agile-left">
+							<h5>Sit amet consectetur</h5>
+						</div>
+						<div class="col-md-9 w3agile-right">
+							<h3><a href="singlepage.singlepage.jsp">Amet consectetur adipisicing </a></h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore dolore reprehender</p>
+							<a class="agileits w3layouts" href="singlepage.singlepage.jsp">Read More <span class="glyphicon agileits w3layouts glyphicon-arrow-right" aria-hidden="true"></span></a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- //wthree-top-1 -->
 			</div>
 			<!-- //btm-wthree-left -->
 				<!-- btm-wthree-right -->
@@ -426,69 +399,28 @@ $(document).ready(function(){
 			<!-- //btm-wthree-right -->
 			<div class="clearfix"></div>
 		</div>
+	</div>
 	<!-- footer -->
 	<div class="footer-agile-info">
 		<div class="container">
 			<div class="col-md-4 w3layouts-footer">
-				<h2 class="footer-title">博主名片</h2>
-					<p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>广东省</p>
+				<h3>Contact Information</h3>
+					<p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>22 Russell Street, Victoria ,Melbourne AUSTRALIA </p>
 					<p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">E: info [at] domain.com</a> </p>
 					<p><span><i class="fa fa-mobile" aria-hidden="true"></i></span>P: +254 2564584 / +542 8245658 </p>
 					<p><span><i class="fa fa-globe" aria-hidden="true"></i></span><a href="#">W: www.w3layouts.com</a></p>
 			</div>
 			<div class="col-md-4 wthree-footer">
-				<h2 class="footer-title">程序统计</h2>
-				<p>
-					<span><i class="fa fa-edit" aria-hidden="true"></i></span>文章：1篇
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<span><i class="fa fa-tags" aria-hidden="true"></i></span>标签：1个
-				</p>
-				<p>
-					<span><i class="fa fa-comments-o" aria-hidden="true"></i></span>评论：1条
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<span><i class="fa fa-smile-o" aria-hidden="true"></i></span>留言：1条
-				</p>
-				<p>
-					<span><i class="fa fa-external-link" aria-hidden="true"></i></span>友链：1个
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<span><i class="fa fa-eye" aria-hidden="true"></i></span>访问：1次
-				</p>
-				<p>
-					<!--<span><i class="fa fa-star" aria-hidden="true"></i></span>文章：1篇
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-					<span><i class="fa fa-spinner" aria-hidden="true"></i></span>总运行：1天
-				</p>
+				<h2>Fashion Blog</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute .</p>
 			</div>
 			<div class="col-md-4 w3-agile">
-				<h2 class="footer-title">关于本站</h2>
-				<div class="footer-block">
-					<div class="kuang">
-						<div class="block-bar">
-							<div class="box"><span>2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-						<div class="block-bar">
-							<div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-						</div>
-					</div>
-				</div>
+				<h3>Newsletter</h3>
+				<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<form action="#" method="post">
+					<input type="email" name="Email" placeholder="Email" required="">
+					<input type="submit" value="Send">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -496,8 +428,20 @@ $(document).ready(function(){
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
+			<div class="w3agile-list">
+				<ul>
+					<li><a href="index.index.jsp">Home</a></li>
+					<li><a href="about.about.jsp">About</a></li>
+					<li><a href="lifestyle.html">Life Style</a></li>
+					<li><a href="photography.html">Photography</a></li>
+					<li><a href="study.study.ｊｓｐ">Fashion</a></li>
+					<li><a href="icons.html">Codes</a></li>
+					<li><a href="features.html">Features</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
 			<div class="agileinfo">
-				<p>© 2017 Zoey . All Rights Reserved . </p>
+				<p>© 2017 Fashion Blog . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 			</div>
 		</div>
 	</div>
