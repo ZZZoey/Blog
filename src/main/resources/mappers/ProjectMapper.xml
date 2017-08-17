@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoey.dao.ProjectDao">
+
+	<resultMap type="Project" id="ProjectResult">
+		<result property="projectId" column="project_id"/>
+		<result property="title" column="typeId"/>
+		<result property="summary" column="summary"/>
+		<result property="coverImage" column="cover_image"/>
+		<result property="typeId" column="type_id"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+	</resultMap>
+
+</mapper> 
