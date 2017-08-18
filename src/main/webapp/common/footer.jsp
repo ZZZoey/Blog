@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: LSY
@@ -5,7 +8,6 @@
   Time: 11:26
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="footer-agile-info">
     <div class="container">
         <div class="col-md-4 w3layouts-footer">
@@ -18,9 +20,9 @@
         <div class="col-md-4 wthree-footer">
             <h2 class="footer-title">程序统计</h2>
             <p>
-                <span><i class="fa fa-edit" aria-hidden="true"></i></span>文章：1篇
+                <span><i class="fa fa-edit" aria-hidden="true"></i></span>文章：${blogCount}篇
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><i class="fa fa-tags" aria-hidden="true"></i></span>标签：1个
+                <span><i class="fa fa-tags" aria-hidden="true"></i></span>标签：${tagCount}个
             </p>
             <p>
                 <span><i class="fa fa-comments-o" aria-hidden="true"></i></span>评论：1条
@@ -28,7 +30,7 @@
                 <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>留言：1条
             </p>
             <p>
-                <span><i class="fa fa-external-link" aria-hidden="true"></i></span>友链：1个
+                <span><i class="fa fa-external-link" aria-hidden="true"></i></span>友链：${linkList.size()}个
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span><i class="fa fa-eye" aria-hidden="true"></i></span>访问：1次
             </p>
@@ -42,30 +44,11 @@
             <h2 class="footer-title">关于本站</h2>
             <div class="footer-block">
                 <div class="kuang">
-                    <div class="block-bar">
-                        <div class="box"><span>2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
-                    <div class="block-bar">
-                        <div class="box"><span style="color: #e29933">2017-8-16</span>博客上线啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
-                    </div>
+                    <c:forEach var="log" items="${logList}">
+                        <div class="block-bar">
+                            <div class="box"><span><fmt:formatDate value="${log.createTime}" pattern="yyyy-MM-dd"/></span>${log.content}</div>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>

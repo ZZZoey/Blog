@@ -7,11 +7,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<resultMap type="Link" id="LinkResult">
 		<result property="linkId" column="link_id"/>
 		<result property="email" column="email"/>
-		<result property="linkName" column="link_name"/>
-		<result property="linkUrl" column="link_url"/>
+		<result property="name" column="name"/>
+		<result property="url" column="url"/>
 		<result property="orderNum" column="order_num"/>
 		<result property="createTime" column="create_time"/>
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
+
+	<select id="listLink"  resultMap="LinkResult">
+		select * from link order by order_num DESC
+	</select>
 
 </mapper> 

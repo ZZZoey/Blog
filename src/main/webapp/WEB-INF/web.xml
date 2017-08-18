@@ -5,11 +5,11 @@
 		 version="3.1">
   <display-name>Blog</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>goIndex.jsp</welcome-file>
   </welcome-file-list>
-	
-    <!-- Spring配置文件 -->
+
+
+	<!-- Spring配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
@@ -33,9 +33,9 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	<!--<listener>
-        <listener-class>com.zoey.service.impl.InitComponent</listener-class>  
-    </listener> -->
+	<listener>
+        <listener-class>com.zoey.service.impl.InitComponent</listener-class>
+    </listener>
 	
 	<!-- 添加对springmvc的支持 -->
 	<servlet>
@@ -56,5 +56,7 @@
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+
+
 	
 </web-app>

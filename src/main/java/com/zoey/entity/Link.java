@@ -6,8 +6,8 @@ package com.zoey.entity;
 public class Link extends BaseEntity {
     private Integer linkId;
     private String email;
-    private String linkName;
-    private String linkUrl;
+    private String name;
+    private String url;
     private Integer orderNum;
 
     public Integer getLinkId() {
@@ -26,20 +26,20 @@ public class Link extends BaseEntity {
         this.email = email;
     }
 
-    public String getLinkName() {
-        return linkName;
+    public String getName() {
+        return name;
     }
 
-    public void setLinkName(String linkName) {
-        this.linkName = linkName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLinkUrl() {
-        return linkUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setLinkUrl(String linkUrl) {
-        this.linkUrl = linkUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Integer getOrderNum() {

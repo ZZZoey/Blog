@@ -990,9 +990,10 @@ a.pa_italic:focus {
 .agileits_popular_posts_grid {
     margin-top: 2em;
 }
-.w3l_categories {
+.w3l_categories ,.w31_tags{
     margin-top: 4em;
 }
+
 ul.tag {
     margin-top: 2em;
 }

@@ -52,3 +52,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+#tag-cloud a:hover{
+    color: #e29933;
+    text-decoration: none;
+}

@@ -11,4 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
-</mapper> 
+	<select id="listLog" resultMap="LogResult">
+		SELECT * FROM log ORDER BY create_time DESC
+	</select>
+</mapper>

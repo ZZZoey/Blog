@@ -5,6 +5,7 @@ package com.zoey.entity;
  */
 public class Blog extends BaseEntity{
 
+    private Integer blogId;
     private String title;
     private String summary;
     private String author;
@@ -12,9 +13,18 @@ public class Blog extends BaseEntity{
     private String content;
     private Integer readNum;
     private Integer favor;
-    private Boolean recomment;
+    private Boolean recommend;
     private Integer projectId;
     private Integer typeId;
+    private int commentNum;
+
+    public Integer getBlogId() {
+        return blogId;
+    }
+
+    public void setBlogId(Integer blogId) {
+        this.blogId = blogId;
+    }
 
     public String getTitle() {
         return title;
@@ -73,11 +83,11 @@ public class Blog extends BaseEntity{
     }
 
     public Boolean getRecomment() {
-        return recomment;
+        return recommend;
     }
 
-    public void setRecomment(Boolean recomment) {
-        this.recomment = recomment;
+    public void setRecomment(Boolean recommend) {
+        this.recommend = recommend;
     }
 
     public Integer getProjectId() {
@@ -94,5 +104,21 @@ public class Blog extends BaseEntity{
 
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
+    }
+
+    public Boolean getRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(Boolean recommend) {
+        this.recommend = recommend;
+    }
+
+    public int getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
     }
 }

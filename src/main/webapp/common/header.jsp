@@ -11,7 +11,7 @@
     <div class="w3layouts-top-strip">
         <div class="container">
             <div class="logo">
-                <h1><a href="index.index.jsp">佐伊的木匣子</a></h1>
+                <h1><a href="index.html">佐伊的木匣子</a></h1>
                 <p>Stay hungry，stay foolish</p>
             </div>
         </div>
@@ -32,10 +32,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="index.jsp">首页</a></li>
-                    <li><a href="study.jsp">学习笔记</a></li>
+                    <li><a class="active" href="index.html">首页</a></li>
+                    <li><a href="study.html">学习笔记</a></li>
                     <li><a href="program.jsp">项目经验</a></li>
-                    <li><a href="mood.jsp">杂文随笔</a></li>
+                    <li><a href="mood.html">杂文随笔</a></li>
                     <li><a href="world.jsp">看世界</a></li>
                     <li><a href="message.jsp">留言墙</a></li>
                     <li><a href="about.jsp">About Me</a></li>

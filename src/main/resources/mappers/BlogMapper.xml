@@ -13,11 +13,52 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="content" column="content"/>
 		<result property="readNum" column="read_num"/>
 		<result property="favor" column="favor"/>
-		<result property="recomment" column="is_recomment"/>
+		<result property="recommend" column="is_recommend"/>
 		<result property="projectId" column="project_id"/>
 		<result property="typeId" column="type_id"/>
 		<result property="createTime" column="create_time"/>
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
+
+	<select id="listBlog" parameterType="Map" resultMap="BlogResult">
+		select * from blog
+		<where>
+			<if test="recommend!=null">
+				and is_recommend=#{recommend}
+			</if>
+			<if test="typeId!=null">
+				and type_id=#{typeId}
+			</if>
+		</where>
+		<choose>
+			<when test="readNum!=null">
+				ORDER BY read_num desc
+			</when>
+			<otherwise>
+				ORDER BY create_time DESC
+			</otherwise>
+		</choose>
+
+		<if test="start!=null and rows!=null">
+			limit #{start} , #{rows}
+		</if>
+
+	</select>
+
+
+	<select id="listFilingDate" resultType="FilingDate">
+		SELECT DATE_FORMAT(create_time,'%Y-%m') AS filingDate,COUNT(*) AS total FROM blog GROUP BY DATE_FORMAT(create_time,'%Y-%m')
+	</select>
+
+	<select id="getBlogCount" parameterType="Map" resultType="Integer">
+		SELECT count(*) from blog
+		<where>
+
+			<if test="typeId!=null">
+				and type_id=#{typeId}
+			</if>
+		</where>
+	</select>
+
 
 </mapper> 
