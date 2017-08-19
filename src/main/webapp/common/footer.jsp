@@ -12,33 +12,31 @@
     <div class="container">
         <div class="col-md-4 w3layouts-footer">
             <h2 class="footer-title">博主名片</h2>
-            <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>广东省</p>
-            <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">E: info [at] domain.com</a></p>
-            <p><span><i class="fa fa-mobile" aria-hidden="true"></i></span>P: +254 2564584 / +542 8245658 </p>
-            <p><span><i class="fa fa-globe" aria-hidden="true"></i></span><a href="#">W: www.w3layouts.com</a></p>
+            <p><span><i class="fa fa-user" aria-hidden="true"></i></span>网名：Zoey</p>
+            <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>坐标：广东</p>
+            <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">邮箱: 1439685884@qq.com</a></p>
+            <p><span><i class="fa fa-star" aria-hidden="true"></i></span>学校：华南师范大学</p>
         </div>
         <div class="col-md-4 wthree-footer">
             <h2 class="footer-title">程序统计</h2>
-            <p>
-                <span><i class="fa fa-edit" aria-hidden="true"></i></span>文章：${blogCount}篇
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><i class="fa fa-tags" aria-hidden="true"></i></span>标签：${tagCount}个
-            </p>
-            <p>
-                <span><i class="fa fa-comments-o" aria-hidden="true"></i></span>评论：1条
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><i class="fa fa-smile-o" aria-hidden="true"></i></span>留言：1条
-            </p>
-            <p>
-                <span><i class="fa fa-external-link" aria-hidden="true"></i></span>友链：${linkList.size()}个
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><i class="fa fa-eye" aria-hidden="true"></i></span>访问：1次
-            </p>
-            <p>
-                <!--<span><i class="fa fa-star" aria-hidden="true"></i></span>文章：1篇
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                <span><i class="fa fa-spinner" aria-hidden="true"></i></span>总运行：1天
-            </p>
+            <table>
+                <tr>
+                    <td><p><span><i class="fa fa-edit" aria-hidden="true"></i></span><a>文章：${blogCount}篇</a></p></td>
+                    <td><p><span><i class="fa fa-tags" aria-hidden="true"></i></span><a>标签：${tagCount}个</a></p></td>
+                </tr>
+                <tr>
+                    <td><p><span><i class="fa fa-comments-o" aria-hidden="true"></i></span><a>评论：${commentCount}条</a></p></td>
+                    <td><p><span><i class="fa fa-smile-o" aria-hidden="true"></i></span><a>留言：${messageCount}条</a></p></td>
+                </tr>
+                <tr>
+                    <td><p><span><i class="fa fa-external-link" aria-hidden="true"></i></span><a>友链：${linkList.size()}个</a></p></td>
+                    <td><p><span><i class="fa fa-heart" aria-hidden="true"></i></span><a>点赞：1次</a></p></td>
+                </tr>
+                <tr>
+                    <td><p><span><i class="fa fa-eye" aria-hidden="true"></i></span><a>访问：1次</a></p></td>
+                    <td><p><span><i class="fa fa-spinner" aria-hidden="true"></i></span><a id="showsectime"></a></p></td>
+                </tr>
+            </table>
         </div>
         <div class="col-md-4 w3-agile">
             <h2 class="footer-title">关于本站</h2>

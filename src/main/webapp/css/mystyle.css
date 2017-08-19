@@ -5,6 +5,15 @@
     font-weight: normal;
     border-bottom: #FFAC3A 2px solid;
 }
+
+.footer-agile-info table {
+    border:0;
+    width: 100%;
+}
+.footer-agile-info table p{
+    margin: 4px 0;
+}
+
 .footer-block{
     position: relative;
     margin-left: 0;

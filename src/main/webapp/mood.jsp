@@ -23,14 +23,14 @@
                                 <div class="events-top">
                                     <div class="col-md-6  w3ls fea-left">
                                         <div class="w3agile_special_deals_grid_left_grid">
-                                            <a href="singlepage.jsp"><img src="${blog.coverImage}" class="img-responsive"
+                                            <a href="blogDetail.jsp"><img src="${blog.coverImage}" class="img-responsive"
                                                                           alt=""/></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 wthree fea-right">
                                         <h3>${blog.title}</h3>
                                         <p>${blog.summary}</p>
-                                        <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
+                                        <a class="agileits w3layouts" href="blogDetail.jsp">Read More <span
                                                 class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                                 aria-hidden="true"></span></a>
                                     </div>
@@ -42,13 +42,13 @@
                                     <div class="col-md-6  w3-agile fea-right">
                                         <h3>${blog.title}</h3>
                                         <p>${blog.summary}</p>
-                                        <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
+                                        <a class="agileits w3layouts" href="blogDetail.jsp">Read More <span
                                                 class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                                 aria-hidden="true"></span></a>
                                     </div>
                                     <div class="col-md-6  fea-left">
                                         <div class="w3agile_special_deals_grid_left_grid">
-                                            <a href="singlepage.jsp"><img src="${blog.coverImage}" class="img-responsive"
+                                            <a href="blogDetail.jsp"><img src="${blog.coverImage}" class="img-responsive"
                                                                           alt=""/></a>
                                         </div>
                                     </div>

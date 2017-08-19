@@ -18,8 +18,8 @@ public class TagServiceImpl implements TagService {
     @Autowired
     private TagDao tagDao;
 
-    public List<Tag> listTag() {
-        return tagDao.listTag();
+    public List<Tag> listTag(Integer blogId) {
+        return tagDao.listTag(blogId);
     }
 
     public Integer getTagCount() {

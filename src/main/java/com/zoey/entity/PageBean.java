@@ -36,7 +36,4 @@ public class PageBean {
         return (this.page-1)*(this.pageSize);
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
-    }
 }

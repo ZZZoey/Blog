@@ -1,9 +1,21 @@
 package com.zoey.service;
 
+import com.zoey.entity.Comment;
+import com.zoey.entity.PageBean;
+
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Created by LSY on 2017/8/17.
  */
 public interface CommentService {
 
-    Integer getCommentCountByBlogId(int blogId);
+    Integer getCommentCount(Integer blogId);
+
+    List<Comment> listComment(HashMap<String,Object> param);
+
+    String genPageNation(PageBean pageBean, String targetUrl);
+
+    Integer getTotalCommentCount(Boolean blogId);
 }

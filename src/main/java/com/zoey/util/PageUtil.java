@@ -14,23 +14,23 @@ public class PageUtil {
         if(pageBean.getPage()==1){
             sb.append("<li class=\"disabled\"><a aria-label=\"Previous\"><span aria-hidden=\"true\">«</span></a></li>");
         }else{
-            sb.append("<li><a href=\"" + targetUrl + "?page=" + (pageBean.getPage()-1) + "\" aria-label=\"Previous\"><span aria-hidden=\"true\">«</span></a></li>");
+            sb.append("<li><a href=\"" + targetUrl + "&page=" + (pageBean.getPage()-1) + "\" aria-label=\"Previous\"><span aria-hidden=\"true\">«</span></a></li>");
         }
         for(int i=pageBean.getPage()-3;i<=pageBean.getPage()+3&&i<=totalPageSize;i++){
             if(i<=0){
                 continue;
             }
             if(pageBean.getPage()==i){
-                sb.append(" <li class=\"active\"><a  href=\"" + targetUrl + "?page=" + i + "\">"+i+" <span class=\"sr-only\">(current)</span></a></li>");
+                sb.append(" <li class=\"active\"><a  href=\"" + targetUrl + "&page=" + i + "\">"+i+" <span class=\"sr-only\">(current)</span></a></li>");
             }else{
-                sb.append("<li><a  href=\"" + targetUrl + "?page=" + i + "\">"+i+"</a></li>");
+                sb.append("<li><a  href=\"" + targetUrl + "&page=" + i + "\">"+i+"</a></li>");
             }
         }
 
         if(pageBean.getPage()==totalPageSize){
             sb.append("<li class=\"disabled\"><a  aria-label=\"Next\"><span aria-hidden=\"true\">»</span></a></li>");
         }else{
-            sb.append("<li><a href=\"" + targetUrl + "?page=" + (pageBean.getPage()+1) + "\" aria-label=\"Next\"><span aria-hidden=\"true\">»</span></a></li>");
+            sb.append("<li><a href=\"" + targetUrl + "&page=" + (pageBean.getPage()+1) + "\" aria-label=\"Next\"><span aria-hidden=\"true\">»</span></a></li>");
         }
         sb.append("</ul>");
         return sb.toString();

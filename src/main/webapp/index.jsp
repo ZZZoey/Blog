@@ -20,7 +20,7 @@
             <div class="wthree-top">
                 <div class="w3agile-top">
                     <div class="w3agile_special_deals_grid_left_grid">
-                        <a href="singlepage.jsp"><img src="${blog.coverImage}" class="img-responsive" alt=""/></a>
+                        <a href="blogDetail.html?blogId=${blog.blogId}"><img src="${blog.coverImage}" class="img-responsive" alt=""/></a>
                     </div>
                     <div class="w3agile-middle">
                         <ul>
@@ -33,9 +33,9 @@
 
                 <div class="w3agile-bottom">
                     <div class="col-md-12 w3agile-right">
-                        <h3><a href="singlepage.jsp">${blog.title}</a></h3>
+                        <h3><a href="blogDetail.jsp">${blog.title}</a></h3>
                         <p>${blog.summary}</p>
-                        <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
+                        <a class="agileits w3layouts" href="blogDetail.jsp">Read More <span
                                 class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                 aria-hidden="true"></span></a>
                     </div>
@@ -51,19 +51,19 @@
                             <ul class="slides">
                                 <li>
                                     <div class="w3agile_special_deals_grid_left_grid">
-                                        <a href="singlepage.jsp"><img src="images/2.jpg"
+                                        <a href="blogDetail.jsp"><img src="images/2.jpg"
                                                                                  class="img-responsive" alt=""/></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="w3agile_special_deals_grid_left_grid">
-                                        <a href="singlepage.jsp"><img src="images/3.jpg"
+                                        <a href="blogDetail.jsp"><img src="images/3.jpg"
                                                                                  class="img-responsive" alt=""/></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="w3agile_special_deals_grid_left_grid">
-                                        <a href="singlepage.jsp"><img src="images/3.jpg"
+                                        <a href="blogDetail.jsp"><img src="images/3.jpg"
                                                                                  class="img-responsive" alt=""/></a>
                                     </div>
                                 </li>
@@ -96,12 +96,12 @@
 
                 <div class="w3agile-bottom">
                     <div class="col-md-9 w3agile-right">
-                        <h3><a href="singlepage.jsp">Amet consectetur adipisicing </a></h3>
+                        <h3><a href="blogDetail.jsp">Amet consectetur adipisicing </a></h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt
                             ut labore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco
                             labor nisi ut aliquip exea commodo consequat duis aute irudre dolor in elit sed uta labore
                             dolore reprehender</p>
-                        <a class="agileits w3layouts" href="singlepage.jsp">Read More <span
+                        <a class="agileits w3layouts" href="blogDetail.jsp">Read More <span
                                 class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                 aria-hidden="true"></span></a>
                     </div>
@@ -109,6 +109,9 @@
                 </div>
             </div>--%>
             <!-- wthree-top-1 -->
+            <nav class="events agileits">
+                ${pageNation}
+            </nav>
         </div>
         <!-- //btm-wthree-left -->
         <!-- btm-wthree-right -->

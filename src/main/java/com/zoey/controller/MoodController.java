@@ -18,7 +18,7 @@ public class MoodController {
 
     private static Integer moodTypeId=3;
     private static Integer pageSize=4;
-    private static String targetUrl="mood.html";
+    private static String moodTargetUrl="mood.html";
 
     @Autowired
     private BlogService blogService;
@@ -34,7 +34,7 @@ public class MoodController {
         param.put("start",pageBean.getStart());
         param.put("rows",pageBean.getPageSize());
         model.addAttribute("blogList",blogService.listBlog(param));
-        model.addAttribute("pageNation",blogService.genPageNation(pageBean,targetUrl,param));
+        model.addAttribute("pageNation",blogService.genPageNation(pageBean,moodTargetUrl+"?",param));
         return "mood";
     }
 }

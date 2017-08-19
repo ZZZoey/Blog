@@ -10,8 +10,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="col-md-3 w3agile_blog_left">
     <div class="wthreesearch">
-        <form action="#" method="post">
-            <input type="search" name="Search" placeholder="Search here" required="">
+        <form action="search.do" method="post">
+            <input type="search" name="s_title" placeholder="Search here" required="">
             <button type="submit" class="btn btn-default search" aria-label="Left Align">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
@@ -66,7 +66,7 @@
         <h3>日期归档</h3>
         <ul>
             <c:forEach var="filingDate" items="${filingDateList }">
-                <li><a href="singlepage.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>${filingDate.filingDate }(${filingDate.total })</a></li>
+                <li><a href="filingDate.html?createTime=${filingDate.filingDate}"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>${filingDate.filingDate }(${filingDate.total })</a></li>
             </c:forEach>
         </ul>
     </div>
@@ -75,6 +75,7 @@
         <h3>标签云</h3>
         <div id='tag-cloud'></div>
     </div>
+
     <div class="w3ls_recent_posts">
         <h3>友情链接</h3>
         <ul class="tag">

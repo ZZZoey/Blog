@@ -20,6 +20,7 @@ public interface BlogService {
 
     Integer getBlogCount(HashMap<String,Object> param);
 
-
     String genPageNation(PageBean pageBean, String targetUrl, HashMap<String,Object> param);
+
+    Blog getBlog(int blogId);
 }

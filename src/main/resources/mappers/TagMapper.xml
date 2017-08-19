@@ -11,8 +11,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
-	<select id="listTag" resultMap="TagResult">
-		SELECT * FROM tag
+	<select id="listTag" parameterType="Integer" resultMap="TagResult">
+		SELECT * FROM tag t
+		<if test="blogId!=null">
+			LEFT JOIN blog_tag bt ON t.tag_id=bt.tag_id
+			WHERE bt.blog_id=#{blogId}
+		</if>
 	</select>
 
 	<select id="getTagCount" resultType="Integer">

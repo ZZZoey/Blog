@@ -9,14 +9,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="visitorIp" column="visitor_ip"/>
 		<result property="visitorName" column="visitor_name"/>
 		<result property="email" column="email"/>
+		<result property="visitorImage" column="visitor_image"/>
 		<result property="content" column="content"/>
 		<result property="blogId" column="blog_id"/>
 		<result property="createTime" column="create_time"/>
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
-	<select id="getCommentCountByBlogId" parameterType="Integer" resultType="Integer">
-		SELECT count(*) from comment where blog_id=#{blogId}
+	<select id="getCommentCount" parameterType="Integer" resultType="Integer">
+		SELECT count(*) from comment
+		<where>
+			<if test="blogId!=null">
+				and blog_id=#{blogId}
+			</if>
+		</where>
+	</select>
+
+	<select id="listComment" parameterType="Map" resultMap="CommentResult">
+		SELECT * from comment
+		<where>
+			<if test="blogId!=null">
+				and blog_id=#{blogId}
+			</if>
+		</where>
+		<if test="start!=null and rows!=null">
+			limit #{start},#{rows}
+		</if>
+	</select>
+
+	<select id="getTotalCommentCount" parameterType="Boolean" resultType="Integer">
+		SELECT count(*) FROM comment
+		<choose>
+			<when test="blogId==true">
+				WHERE blog_id IS NOT NULL
+			</when>
+			<otherwise>
+				WHERE blog_id IS NULL
+			</otherwise>
+		</choose>
 	</select>
 
 </mapper> 

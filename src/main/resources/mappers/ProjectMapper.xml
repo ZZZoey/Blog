@@ -6,12 +6,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<resultMap type="Project" id="ProjectResult">
 		<result property="projectId" column="project_id"/>
-		<result property="title" column="typeId"/>
+		<result property="title" column="title"/>
 		<result property="summary" column="summary"/>
 		<result property="coverImage" column="cover_image"/>
 		<result property="typeId" column="type_id"/>
 		<result property="createTime" column="create_time"/>
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
+
+	<select id="listProject" resultMap="ProjectResult">
+		SELECT * FROM project
+	</select>
 
 </mapper> 

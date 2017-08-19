@@ -1,14 +1,15 @@
 package com.zoey.controller;
 
-import com.zoey.entity.Blog;
+import com.zoey.entity.PageBean;
 import com.zoey.service.BlogService;
+import com.zoey.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by LSY on 2017/8/16.
@@ -16,17 +17,74 @@ import java.util.List;
 @Controller
 public class IndexController {
 
+    private Integer pageSize=4;
+    private String tagTargetUrl="tag.html";
+    private String filingDateTargetUrl="filingDate.html";
+    private String searchTargetUrl="search.html";
+
     @Autowired
     private BlogService blogService;
 
+
     @RequestMapping("/index")
-    public String goIndex(Model model){
+    public String goIndex(String page,Model model){
+        if(StringUtils.isEmpty(page)){
+            page="1";
+        }
         HashMap<String,Object> param=new HashMap<String, Object>();
-        param.put("start",0);
-        param.put("rows",4);
-        List<Blog> blogList = blogService.listBlogWithCommentCount(param);
-        model.addAttribute("blogList",blogList);
+        PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
+        param.put("start",pageBean.getStart());
+        param.put("rows",pageBean.getPageSize());
+        model.addAttribute("blogList",blogService.listBlogWithCommentCount(param));
+        model.addAttribute("pageNation",blogService.genPageNation(pageBean,"index.html?",param));
         return "index";
+    }
+
+    @RequestMapping("/tag")
+    public String tag(String page, int tagId, Model model){
+        if(StringUtils.isEmpty(page)){
+            page="1";
+        }
+        HashMap<String,Object> param=new HashMap<String, Object>();
+        PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
+        param.put("tagId",tagId);
+        param.put("start",pageBean.getStart());
+        param.put("rows",pageBean.getPageSize());
+        model.addAttribute("blogList",blogService.listBlog(param));
+        model.addAttribute("pageNation",blogService.genPageNation(pageBean,tagTargetUrl+"?tagId="+tagId,param));
+        return "list";
+
+    }
+
+    @RequestMapping("/filingDate")
+    public String filingDate(String page,String createTime, Model model){
+        if(StringUtils.isEmpty(page)){
+            page="1";
+        }
+        HashMap<String,Object> param=new HashMap<String, Object>();
+        PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
+        param.put("createTime",createTime);
+        param.put("start",pageBean.getStart());
+        param.put("rows",pageBean.getPageSize());
+        model.addAttribute("blogList",blogService.listBlog(param));
+        model.addAttribute("pageNation",blogService.genPageNation(pageBean,filingDateTargetUrl+"?createTime="+createTime,param));
+        return "list";
+
+    }
+
+    @RequestMapping("/search")
+    public String search(String page,String s_title,Model model){
+        if(StringUtils.isEmpty(page)){
+            page="1";
+        }
+        HashMap<String,Object> param=new HashMap<String, Object>();
+        PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
+        param.put("s_title", StringUtil.formatSqlLike(s_title));
+        param.put("start",pageBean.getStart());
+        param.put("rows",pageBean.getPageSize());
+        model.addAttribute("blogList",blogService.listBlog(param));
+        model.addAttribute("pageNation",blogService.genPageNation(pageBean,searchTargetUrl+"?s_title="+s_title,param));
+        return "list";
     }
 
 

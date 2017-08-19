@@ -889,7 +889,7 @@ l.wthreesearch input[type="search"]:active, li.wthreesearch input[type="search"]
 	background-color: #000;
 	color: #FFF;
 }
-.agile_author,.w3ls_recent_posts{
+.agile_author,.w3ls_recent_posts,.w3l_categories,.w3l_tags{
 	margin:4em 0;
 }
 .w3agile_blog_left h3 {
@@ -981,7 +981,7 @@ a.pa_italic:focus {
 .agileits_recent_posts_gridr ul li:last-child{
 	margin:0;
 }
-.w3ls_popular_posts {
+.w3ls_popular_posts,.w3l_categories ,.w31_tags{
     margin-top: 4em;
 }
 .w3ls_popular_posts h4 {
@@ -989,9 +989,6 @@ a.pa_italic:focus {
 }
 .agileits_popular_posts_grid {
     margin-top: 2em;
-}
-.w3l_categories ,.w31_tags{
-    margin-top: 4em;
 }
 
 ul.tag {
@@ -1030,11 +1027,8 @@ ul.tag li a:hover{
 .agileits_recent_posts_gridr h4 {
     margin: 0 0 0.5em;
 }
-.agileits_recent_posts_grid:nth-child(2) {
-    margin: 2em 0 1em;
-}
-.agileits_recent_posts_grid:nth-child(3){
-	margin: 0em 0 1em;
+.agileits_recent_posts_grid {
+    margin: 2em 0;
 }
 .w3l_categories ul{
 	padding:2em 0 0;
@@ -2020,10 +2014,8 @@ h2.typoh2{
 	line-height:1.8em;
 	margin:0;
 }
-.comments-grid:nth-child(2){
-	margin:2em 0;
-}
-.comments-grid:nth-child(3){
+
+.comments-grid{
 	margin:0 0 2em;
 }
 .leave-coment-form{
@@ -2237,7 +2229,7 @@ h2.typoh2{
     margin-top: 20px;
 }
 .w3_agile_classes_grid {
-    padding-top: 5.5em;
+    padding-top: 3em;
 }
 .w3_agile_classes_grid_middle img {
     margin: 0 auto;

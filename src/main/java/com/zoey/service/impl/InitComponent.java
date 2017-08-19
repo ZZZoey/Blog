@@ -4,10 +4,7 @@ package com.zoey.service.impl;
  */
 
 import com.zoey.entity.*;
-import com.zoey.service.BlogService;
-import com.zoey.service.LinkService;
-import com.zoey.service.LogService;
-import com.zoey.service.TagService;
+import com.zoey.service.*;
 import com.zoey.util.JsonUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -34,6 +31,7 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
         LinkService linkService=(LinkService) applicationContext.getBean("linkService");
         LogService logService=(LogService) applicationContext.getBean("logService");
         TagService tagService=(TagService) applicationContext.getBean("tagService");
+        CommentService commentService=(CommentService) applicationContext.getBean("commentService");
 
         HashMap<String,Object> recommendParam=new HashMap<String,Object>();
         recommendParam.put("recommend",true);
@@ -58,7 +56,7 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
         List<Log> logList = logService.listLog();
         application.setAttribute("logList",logList);
 
-        List<Tag> tagList = tagService.listTag();
+        List<Tag> tagList = tagService.listTag(null);
         application.setAttribute("tagList", JsonUtil.getJsonFromObject(tagList));
 
         int blogCount=blogService.getBlogCount(new HashMap<String, Object>());
@@ -66,6 +64,12 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 
         int tagCount=tagService.getTagCount();
         application.setAttribute("tagCount",tagCount);
+
+        int commentCount=commentService.getTotalCommentCount(true);
+        application.setAttribute("commentCount",commentCount);
+
+        int messageCount=commentService.getTotalCommentCount(false);
+        application.setAttribute("messageCount",messageCount);
 
     }
 

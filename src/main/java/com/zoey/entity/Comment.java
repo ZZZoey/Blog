@@ -8,8 +8,9 @@ public class Comment extends BaseEntity{
     private String visitorIp;
     private String visitorName;
     private String email;
+    private String visitorImage;
     private String content;
-    private String blogId;
+    private Integer blogId;
 
     public Integer getCommentId() {
         return commentId;
@@ -43,6 +44,14 @@ public class Comment extends BaseEntity{
         this.email = email;
     }
 
+    public String getVisitorImage() {
+        return visitorImage;
+    }
+
+    public void setVisitorImage(String visitorImage) {
+        this.visitorImage = visitorImage;
+    }
+
     public String getContent() {
         return content;
     }
@@ -51,11 +60,11 @@ public class Comment extends BaseEntity{
         this.content = content;
     }
 
-    public String getBlogId() {
+    public Integer getBlogId() {
         return blogId;
     }
 
-    public void setBlogId(String blogId) {
+    public void setBlogId(Integer blogId) {
         this.blogId = blogId;
     }
 }

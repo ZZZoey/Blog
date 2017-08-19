@@ -21,7 +21,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="listBlog" parameterType="Map" resultMap="BlogResult">
-		select * from blog
+		select * from blog b
+		<if test="tagId!=null">
+			LEFT JOIN blog_tag bt ON b.blog_id=bt.blog_id
+			LEFT JOIN tag t ON bt.tag_id=t.tag_id
+			where t.tag_id=#{tagId}
+		</if>
 		<where>
 			<if test="recommend!=null">
 				and is_recommend=#{recommend}
@@ -29,13 +34,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="typeId!=null">
 				and type_id=#{typeId}
 			</if>
+			<if test="projectId!=null">
+				and project_id=#{projectId}
+			</if>
+			<if test="createTime!=null and createTime!=''">
+				and Date_format(create_time,'%Y-%m')=#{createTime}
+			</if>
+			<if test="s_title!=null and s_title!=''">
+				and title like #{s_title}
+			</if>
 		</where>
 		<choose>
 			<when test="readNum!=null">
-				ORDER BY read_num desc
+				ORDER BY b.read_num desc
 			</when>
 			<otherwise>
-				ORDER BY create_time DESC
+				ORDER BY b.create_time DESC
 			</otherwise>
 		</choose>
 
@@ -45,19 +59,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 
-
 	<select id="listFilingDate" resultType="FilingDate">
 		SELECT DATE_FORMAT(create_time,'%Y-%m') AS filingDate,COUNT(*) AS total FROM blog GROUP BY DATE_FORMAT(create_time,'%Y-%m')
 	</select>
 
 	<select id="getBlogCount" parameterType="Map" resultType="Integer">
-		SELECT count(*) from blog
+		SELECT count(*) from blog b
+		<if test="tagId!=null">
+			left join blog_tag bt on b.blog_id=bt.blog_id where bt.tag_id=#{tagId}
+		</if>
 		<where>
-
 			<if test="typeId!=null">
 				and type_id=#{typeId}
 			</if>
+			<if test="projectId!=null">
+				and project_id=#{projectId}
+			</if>
+			<if test="createTime!=null">
+				and Date_format(create_time,'%Y-%m')=#{createTime}
+			</if>
+			<if test="s_title!=null and s_title!=''">
+				and title like #{s_title}
+			</if>
 		</where>
+	</select>
+
+	<select id="getBlog" parameterType="Integer" resultMap="BlogResult">
+		select * from blog where blog_id=#{blogId}
 	</select>
 
 

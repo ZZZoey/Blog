@@ -6,6 +6,7 @@ import com.zoey.entity.FilingDate;
 import com.zoey.entity.PageBean;
 import com.zoey.service.BlogService;
 import com.zoey.service.CommentService;
+import com.zoey.service.TagService;
 import com.zoey.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,10 +26,13 @@ public class BlogServiceImpl implements BlogService {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private TagService tagService;
+
     public List<Blog> listBlogWithCommentCount(HashMap<String, Object> param) {
         List<Blog> blogList = blogDao.listBlog(param);
         for(Blog blog:blogList){
-            int commentNum=commentService.getCommentCountByBlogId(blog.getBlogId());
+            int commentNum=commentService.getCommentCount(blog.getBlogId());
             blog.setCommentNum(commentNum);
         }
         return blogList;
@@ -38,6 +42,7 @@ public class BlogServiceImpl implements BlogService {
     public List<Blog> listBlog(HashMap<String, Object> param) {
         return blogDao.listBlog(param);
     }
+
 
     public List<FilingDate> listFilingDate() {
         return blogDao.listFilingDate();
@@ -50,5 +55,14 @@ public class BlogServiceImpl implements BlogService {
     public String genPageNation(PageBean pageBean,String targetUrl,HashMap<String,Object> param) {
         Integer blogCount = blogDao.getBlogCount(param);
         return PageUtil.genPageNation(pageBean,blogCount,targetUrl);
+    }
+
+    public Blog getBlog(int blogId) {
+        Blog blog = blogDao.getBlog(blogId);
+        HashMap<String,Object> param=new HashMap<String, Object>();
+        param.put("blogId",blogId);
+        blog.setCommentList(commentService.listComment(param));
+        blog.setTagList(tagService.listTag(blogId));
+        return blog;
     }
 }

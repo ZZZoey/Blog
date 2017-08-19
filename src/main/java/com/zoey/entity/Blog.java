@@ -1,5 +1,7 @@
 package com.zoey.entity;
 
+import java.util.List;
+
 /**
  * Created by LSY on 2017/8/17.
  */
@@ -17,6 +19,8 @@ public class Blog extends BaseEntity{
     private Integer projectId;
     private Integer typeId;
     private int commentNum;
+    private List<Comment> commentList;
+    private List<Tag> tagList;
 
     public Integer getBlogId() {
         return blogId;
@@ -120,5 +124,21 @@ public class Blog extends BaseEntity{
 
     public void setCommentNum(int commentNum) {
         this.commentNum = commentNum;
+    }
+
+    public List<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
+    }
+
+    public List<Tag> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<Tag> tagList) {
+        this.tagList = tagList;
     }
 }

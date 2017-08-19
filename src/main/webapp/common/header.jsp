@@ -34,10 +34,10 @@
                 <ul class="nav navbar-nav">
                     <li><a class="active" href="index.html">首页</a></li>
                     <li><a href="study.html">学习笔记</a></li>
-                    <li><a href="program.jsp">项目经验</a></li>
+                    <li><a href="project.html">项目经验</a></li>
                     <li><a href="mood.html">杂文随笔</a></li>
                     <li><a href="world.jsp">看世界</a></li>
-                    <li><a href="message.jsp">留言墙</a></li>
+                    <li><a href="message.html">留言墙</a></li>
                     <li><a href="about.jsp">About Me</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

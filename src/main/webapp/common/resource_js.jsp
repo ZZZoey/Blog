@@ -119,7 +119,7 @@ function hideURLbar() {
         for(var i=0;i<tagList.length;i++){
             var item={};
             item.label=tagList[i].name;
-            item.url='#';
+            item.url='tag.do?tagId='+tagList[i].tagId;
             item.target='_top';
             entries.push(item);
         }
@@ -153,3 +153,31 @@ function hideURLbar() {
     } );
 
 </script>
+
+<script type="text/javascript">
+    function NewDate(str) {
+        str = str.split('-');
+        var date = new Date();
+        date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+        date.setUTCHours(0, 0, 0, 0);
+        return date;
+    }
+    function showsectime() {
+        var birthDay =NewDate("2017-08-01");
+        var today=new Date();
+        var timeold=today.getTime()-birthDay.getTime();
+
+        var msPerDay=24*60*60*1000;
+
+        var e_daysold=timeold/msPerDay;
+        var daysold=Math.floor(e_daysold);
+
+        document.getElementById("showsectime").innerHTML = "已运行："+daysold+"天";
+        setTimeout(showsectime, 1000);
+    }
+
+    showsectime();
+</script>
+
+
+
