@@ -8,4 +8,7 @@ import com.zoey.entity.Blogger;
 public interface BloggerService {
 
     Blogger login(Blogger blogger);
+
+    int modifyPassword(Blogger blogger);
+
 }

@@ -2,6 +2,7 @@ package com.zoey.service.impl;
 
 import com.zoey.dao.LinkDao;
 import com.zoey.entity.Link;
+import com.zoey.entity.PageBean;
 import com.zoey.service.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,18 @@ public class LinkServiceImpl implements LinkService {
     private LinkDao linkDao;
 
     public List<Link> listLink() {
-
         return linkDao.listLink();
+    }
+
+    public int addLink(Link link) {
+        return linkDao.addLink(link);
+    }
+
+    public int updateLink(Link link) {
+        return linkDao.updateLink(link);
+    }
+
+    public int deleteLink(int linkId) {
+        return linkDao.deleteLink(linkId);
     }
 }

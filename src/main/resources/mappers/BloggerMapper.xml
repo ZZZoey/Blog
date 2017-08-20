@@ -14,4 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM blogger WHERE blogger_name=#{bloggerName} and password=#{password}
 	</select>
 
+	<update id="modifyPassword" parameterType="Blogger">
+		UPDATE blogger SET blogger_name=#{bloggerName},password=#{password} WHERE id=#{id}
+	</update>
+
 </mapper> 

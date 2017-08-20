@@ -11,4 +11,10 @@ public interface LinkDao {
 
     List<Link> listLink();
 
+    int addLink(Link link);
+
+    int updateLink(Link link);
+
+    int deleteLink(int linkId);
+
 }

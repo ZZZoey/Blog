@@ -11,6 +11,7 @@ public class Comment extends BaseEntity{
     private String visitorImage;
     private String content;
     private Integer blogId;
+    private Blog blog;
 
     public Integer getCommentId() {
         return commentId;
@@ -66,5 +67,13 @@ public class Comment extends BaseEntity{
 
     public void setBlogId(Integer blogId) {
         this.blogId = blogId;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
 }

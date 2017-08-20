@@ -1,14 +1,17 @@
 package com.zoey.service.impl;
 
 import com.zoey.dao.CommentDao;
+import com.zoey.entity.Blog;
 import com.zoey.entity.Comment;
 import com.zoey.entity.PageBean;
+import com.zoey.service.BlogService;
 import com.zoey.service.CommentService;
 import com.zoey.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -20,6 +23,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private CommentDao commentDao;
+
+    @Autowired
+    private BlogService blogService;
 
     public Integer getCommentCount(Integer blogId) {
         return commentDao.getCommentCount(blogId);
@@ -36,5 +42,14 @@ public class CommentServiceImpl implements CommentService {
 
     public Integer getTotalCommentCount(Boolean blogId) {
         return commentDao.getTotalCommentCount(blogId);
+    }
+
+    public List<Comment> listCommentWithBlog(HashMap<String, Object> param) {
+        List<Comment> commentList=listComment(param);
+        for (Comment comment : commentList) {
+            Blog blog=blogService.getBlog(comment.getBlogId());
+            comment.setBlog(blog);
+        }
+        return commentList;
     }
 }

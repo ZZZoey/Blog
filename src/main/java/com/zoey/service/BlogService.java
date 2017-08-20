@@ -23,4 +23,5 @@ public interface BlogService {
     String genPageNation(PageBean pageBean, String targetUrl, HashMap<String,Object> param);
 
     Blog getBlog(int blogId);
+
 }

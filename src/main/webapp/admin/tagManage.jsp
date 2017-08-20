@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>友情链接管理页面</title>
+<title>博客标签管理页面</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/icon.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/jquery.min.js"></script>
@@ -15,7 +15,7 @@
 
 	var url;
 
-	function deleteLink(){
+	function deleteTag(){
 		var selectedRows=$("#dg").datagrid("getSelections");
 		if(selectedRows.length==0){
 			 $.messager.alert("系统提示","请选择要删除的数据！");
@@ -23,14 +23,18 @@
 		 }
 		 var strIds=[];
 		 for(var i=0;i<selectedRows.length;i++){
-			 strIds.push(selectedRows[i].linkId);
+			 strIds.push(selectedRows[i].tagId);
 		 }
 		 var ids=strIds.join(",");
 		 $.messager.confirm("系统提示","您确定要删除这<font color=red>"+selectedRows.length+"</font>条数据吗？",function(r){
 				if(r){
-					$.post("${pageContext.request.contextPath}/admin/link/delete.do",{ids:ids},function(result){
+					$.post("${pageContext.request.contextPath}/admin/tag/delete.do",{ids:ids},function(result){
 						if(result.success){
-							 $.messager.alert("系统提示","数据已成功删除！");
+							if(result.msg){
+								 $.messager.alert("系统提示",result.msg);
+							}else{
+								 $.messager.alert("系统提示","数据已成功删除！");								
+							}
 							 $("#dg").datagrid("reload");
 						}else{
 							$.messager.alert("系统提示","数据删除失败！");
@@ -40,24 +44,24 @@
 	   });
 	}
 	
-	function openLinkAddDialog(){
-		$("#dlg").dialog("open").dialog("setTitle","添加友情链接信息");
-		url="${pageContext.request.contextPath}/admin/link/save.do";
+	function openTagAddDialog(){
+		$("#dlg").dialog("open").dialog("setTitle","添加博客标签信息");
+		url="${pageContext.request.contextPath}/admin/tag/save.do";
 	}
 	
-	function openLinkModifyDialog(){
+	function openTagModifyDialog(){
 		var selectedRows=$("#dg").datagrid("getSelections");
 		 if(selectedRows.length!=1){
 			 $.messager.alert("系统提示","请选择一条要编辑的数据！");
 			 return;
 		 }
 		 var row=selectedRows[0];
-		 $("#dlg").dialog("open").dialog("setTitle","编辑友情链接信息");
+		 $("#dlg").dialog("open").dialog("setTitle","编辑博客标签信息");
 		 $("#fm").form("load",row);
-		 url="${pageContext.request.contextPath}/admin/link/save.do?linkId="+row.linkId;
+		 url="${pageContext.request.contextPath}/admin/tag/save.do?tagId="+row.tagId;
 	 }
 	
-	function saveLink(){
+	function saveTag(){
 		 $("#fm").form("submit",{
 			url:url,
 			onSubmit:function(){
@@ -79,64 +83,53 @@
 	 }
 	 
 	function resetValue(){
-		 $("#linkName").val("");
-		 $("#linkUrl").val("");
+		 $("#typeName").val("");
 		 $("#orderNo").val("");
 	 }
 	
-	 function closeLinkDialog(){
+	 function closeTagDialog(){
 		 $("#dlg").dialog("close");
 		 resetValue();
 	 }
 </script>
 </head>
 <body style="margin: 1px">
-<table id="dg" title="友情链接管理" class="easyui-datagrid"
+<table id="dg" title="博客标签管理" class="easyui-datagrid"
    fitColumns="true" pagination="true" rownumbers="true"
-   url="${pageContext.request.contextPath}/admin/link/list.do" fit="true" toolbar="#tb">
+   url="${pageContext.request.contextPath}/admin/tag/list.do" fit="true" toolbar="#tb">
    <thead>
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>
-   		<th field="linkId" width="20" align="center">编号</th>
-   		<th field="name" width="200" align="center">友情链接名称</th>
-   		<th field="url" width="200" align="center">友情链接地址</th>
-   		<th field="orderNum" width="100" align="center">排序序号</th>
+   		<th field="tagId" width="20" align="center">编号</th>
+   		<th field="name" width="100" align="center">博客标签名称</th>
    	</tr>
    </thead>
  </table>
  <div id="tb">
  	<div>
- 	    <a href="javascript:openLinkAddDialog()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
- 		<a href="javascript:openLinkModifyDialog()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
- 		<a href="javascript:deleteLink()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
+ 	    <a href="javascript:openTagAddDialog()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+ 		<a href="javascript:openTagModifyDialog()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+ 		<a href="javascript:deleteTag()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
  	</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
  </div>
  
  
- <div id="dlg" class="easyui-dialog" style="width:500px;height:200px;padding: 10px 20px"
+ <div id="dlg" class="easyui-dialog" style="width:500px;height:180px;padding: 10px 20px"
    closed="true" buttons="#dlg-buttons">
    
    <form id="fm" method="post">
    	<table cellspacing="8px">
    		<tr>
-   			<td>友情链接名称：</td>
-   			<td><input type="text" id="linkName" name="name" class="easyui-validatebox" required="true"/></td>
-   		</tr>
-   		<tr>
-   			<td>友情链接地址：</td>
-   			<td><input type="text" id="linkUrl" name="url" class="easyui-validatebox" validtype="url" required="true" style="width: 250px"/></td>
-   		</tr>
-   		<tr>
-   			<td>友情链接排序：</td>
-   			<td><input type="text" id="orderNo" name="orderNum" class="easyui-numberbox" required="true" style="width: 60px"/>&nbsp;(友情链接根据排序序号从小到大排序)</td>
+   			<td>博客标签名称：</td>
+   			<td><input type="text" id="typeName" name="name" class="easyui-validatebox" required="true"/></td>
    		</tr>
    	</table>
    </form>
  </div>
  
  <div id="dlg-buttons">
- 	<a href="javascript:saveLink()" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
- 	<a href="javascript:closeLinkDialog()" class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+ 	<a href="javascript:saveTag()" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
+ 	<a href="javascript:closeTagDialog()" class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
  </div>
 </body>
 </html>

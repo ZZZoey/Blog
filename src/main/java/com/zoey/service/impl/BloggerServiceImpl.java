@@ -19,4 +19,8 @@ public class BloggerServiceImpl implements BloggerService {
     public Blogger login(Blogger blogger) {
         return bloggerDao.login(blogger);
     }
+
+    public int modifyPassword(Blogger blogger) {
+        return bloggerDao.modifyPassword(blogger);
+    }
 }

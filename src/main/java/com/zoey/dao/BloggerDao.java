@@ -8,4 +8,6 @@ import com.zoey.entity.Blogger;
 public interface BloggerDao {
 
     Blogger login(Blogger blogger);
+
+    int modifyPassword(Blogger blogger);
 }

@@ -27,7 +27,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="listComment" parameterType="Map" resultMap="CommentResult">
 		SELECT * from comment
+
 		<where>
+			<choose>
+				<when test="commentList==true">
+					and blog_id !=0
+				</when>
+				<otherwise>
+					and blog_id =0
+				</otherwise>
+			</choose>
 			<if test="blogId!=null">
 				and blog_id=#{blogId}
 			</if>
@@ -40,11 +49,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getTotalCommentCount" parameterType="Boolean" resultType="Integer">
 		SELECT count(*) FROM comment
 		<choose>
-			<when test="blogId==true">
-				WHERE blog_id IS NOT NULL
+			<when test="comment==true">
+				WHERE blog_id !=0
 			</when>
 			<otherwise>
-				WHERE blog_id IS NULL
+				WHERE blog_id =0
 			</otherwise>
 		</choose>
 	</select>

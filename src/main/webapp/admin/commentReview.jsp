@@ -56,11 +56,11 @@
    <thead>
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>
-   		<th field="id" width="20" align="center">编号</th>
+   		<th field="commentId" width="20" align="center">编号</th>
    		<th field="blog" width="200" align="center" formatter="formatBlogTitle">博客标题</th>
-   		<th field="userIp" width="100" align="center">用户IP</th>
+   		<th field="visitorIp" width="100" align="center">用户IP</th>
    		<th field="content" width="200" align="center">评论内容</th>
-   		<th field="commentDate" width="50" align="center">评论日期</th>
+   		<th field="createTime" width="50" align="center">评论日期</th>
    	</tr>
    </thead>
  </table>

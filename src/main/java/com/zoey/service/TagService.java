@@ -2,6 +2,7 @@ package com.zoey.service;
 
 import com.zoey.entity.Tag;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,7 +10,13 @@ import java.util.List;
  */
 public interface TagService {
 
-    List<Tag> listTag(Integer blogId);
+    List<Tag> listTag(HashMap<String,Object> param);
 
     Integer getTagCount();
+
+    int addTag(Tag tag);
+
+    int updateTag(Tag tag);
+
+    int deleteTag(int tagId);
 }

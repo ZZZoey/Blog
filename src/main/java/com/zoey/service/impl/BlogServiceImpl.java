@@ -62,7 +62,7 @@ public class BlogServiceImpl implements BlogService {
         HashMap<String,Object> param=new HashMap<String, Object>();
         param.put("blogId",blogId);
         blog.setCommentList(commentService.listComment(param));
-        blog.setTagList(tagService.listTag(blogId));
+        blog.setTagList(tagService.listTag(param));
         return blog;
     }
 }

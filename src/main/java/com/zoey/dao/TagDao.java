@@ -1,8 +1,8 @@
 package com.zoey.dao;
 
 import com.zoey.entity.Tag;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,8 +10,14 @@ import java.util.List;
  */
 public interface TagDao {
 
-    List<Tag> listTag(@Param("blogId") Integer blogId);
+    List<Tag> listTag(HashMap<String,Object> param);
 
     Integer getTagCount();
+
+    int addTag(Tag tag);
+
+    int updateTag(Tag tag);
+
+    int deleteTag(int tagId);
 
 }

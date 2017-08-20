@@ -1,16 +1,17 @@
-package com.zoey.dao;
+package com.zoey.service;
 
+import com.zoey.entity.PageBean;
 import com.zoey.entity.Type;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by LSY on 2017/8/17.
+ * Created by LSY on 2017/8/19.
  */
-public interface TypeDao {
 
-    List<Type> listType(HashMap<String,Object> param);
+public interface TypeService {
+
+    List<Type> listType(PageBean pageBean);
 
     Integer getTypeCount();
 

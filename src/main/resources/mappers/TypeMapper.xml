@@ -11,4 +11,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
+	<select id="listType" parameterType="Map" resultMap="TypeResult">
+		SELECT * FROM type
+		<if test="start!=null and rows!=null">
+			limit #{start} , #{rows}
+		</if>
+	</select>
+
+	<select id="getTypeCount" resultType="Integer">
+		select count(*) from type
+	</select>
+
+	<insert id="addType" parameterType="Type">
+		INSERT INTO type values(null,#{name},now(),now())
+	</insert>
+
+	<update id="updateType" parameterType="Type">
+		UPDATE type SET name=#{name},update_time=#{updateTime} WHERE type_id=#{typeId}
+	</update>
+
+	<delete id="deleteType" parameterType="Integer">
+		DELETE FROM TYPE where type_id=#{typeId}
+	</delete>
 </mapper> 
