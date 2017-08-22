@@ -84,7 +84,6 @@
 	 
 	function resetValue(){
 		 $("#typeName").val("");
-		 $("#orderNo").val("");
 	 }
 	
 	 function closeBlogTypeDialog(){

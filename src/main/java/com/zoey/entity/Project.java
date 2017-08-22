@@ -8,7 +8,7 @@ public class Project extends BaseEntity {
     private String title;
     private String summary;
     private String coverImage;
-    private Integer typeId;
+
 
     public Integer getProjectId() {
         return projectId;
@@ -42,11 +42,13 @@ public class Project extends BaseEntity {
         this.coverImage = coverImage;
     }
 
-    public Integer getTypeId() {
-        return typeId;
+
+    public Project() {
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public Project(Integer projectId, String title, String summary) {
+        this.projectId = projectId;
+        this.title = title;
+        this.summary = summary;
     }
 }

@@ -3,6 +3,7 @@ package com.zoey.service;
 import com.zoey.entity.PageBean;
 import com.zoey.entity.Type;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,4 +21,8 @@ public interface TypeService {
     int updateType(Type type);
 
     int deleteType(int typeId);
+
+    Type getTypeById(Integer typeId);
+
+    List<Type> typeComboList(HashMap<String,Object> param);
 }

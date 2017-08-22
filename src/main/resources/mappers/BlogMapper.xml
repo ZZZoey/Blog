@@ -88,6 +88,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from blog where blog_id=#{blogId}
 	</select>
 
+	<delete id="deleteBlog" parameterType="Integer">
+		DELETE FROM blog WHERE blog_id=#{blogId}
+	</delete>
 
+	<insert id="addBlog" parameterType="Blog">
+		INSERT INTO blog VALUES (null,#{title},#{summary},#{author},#{cover_image},#{content})
+	</insert>
 
 </mapper> 

@@ -21,6 +21,16 @@ public class Blog extends BaseEntity{
     private int commentNum;
     private List<Comment> commentList;
     private List<Tag> tagList;
+    private Type type;
+    private String tags;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public Integer getBlogId() {
         return blogId;
@@ -140,5 +150,13 @@ public class Blog extends BaseEntity{
 
     public void setTagList(List<Tag> tagList) {
         this.tagList = tagList;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }

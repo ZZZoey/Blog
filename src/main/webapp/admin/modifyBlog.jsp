@@ -66,15 +66,15 @@
                 </select>
    			</td>
    		</tr>
+		<tr>
+			<td>标签：</td>
+			<td><input type="text" id="tags" name="tags" style="width: 400px;"/>&nbsp;(多个标签中间用逗号隔开)</td>
+		</tr>
    		<tr>
    			<td valign="top">博客内容：</td>
    			<td>
 				   <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
    			</td>
-   		</tr>
-   		<tr>
-   			<td>关键字：</td>
-   			<td><input type="text" id="keyWord" name="keyWord" style="width: 400px;"/>&nbsp;(多个关键字中间用空格隔开)</td>
    		</tr>
    		<tr>
    			<td></td>

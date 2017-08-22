@@ -77,4 +77,13 @@ public class TagManageController {
             }
         }
     }
+
+    @RequestMapping("/tagComboList")
+    public void tagComboList(HttpServletResponse response){
+        List<Tag> listTag=tagService.listTag(new HashMap<String, Object>());
+        Tag tag=new Tag();
+        tag.setName("请选择");
+        listTag.add(0,tag);
+        ResponseUtil.write(response,JsonUtil.getJsonFromObject(listTag));
+    }
 }

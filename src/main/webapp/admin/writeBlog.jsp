@@ -62,23 +62,23 @@
    		<tr>
    			<td>所属类别：</td>
    			<td>
-   				<select class="easyui-combobox" style="width: 154px" id="blogTypeId" name="blogType.id" editable="false" panelHeight="auto" >
+   				<select class="easyui-combobox" style="width: 154px" id="typeId" name="typeId" editable="false" panelHeight="auto" >
 					<option value="">请选择博客类别...</option>	
-				    <c:forEach var="blogType" items="${blogTypeCountList }">
-				    	<option value="${blogType.id }">${blogType.typeName }</option>
+				    <c:forEach var="type" items="${typeComboList }">
+				    	<option value="${type.typeId }">${type.name }</option>
 				    </c:forEach>			
                 </select>
    			</td>
    		</tr>
+		<tr>
+			<td>标签：</td>
+			<td><input type="text" id="tags" name="tags" style="width: 400px;"/>&nbsp;(多个标签中间用逗号隔开)</td>
+		</tr>
    		<tr>
    			<td valign="top">博客内容：</td>
    			<td>
 				   <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
    			</td>
-   		</tr>
-   		<tr>
-   			<td>关键字：</td>
-   			<td><input type="text" id="keyWord" name="keyWord" style="width: 400px;"/>&nbsp;(多个关键字中间用空格隔开)</td>
    		</tr>
    		<tr>
    			<td></td>

@@ -20,4 +20,10 @@ public interface BlogDao {
 
     Blog getBlog(@Param("blogId") int blogId);
 
+    int deleteBlog(int blogId);
+
+    int addBlog(Blog blog);
+
+    int updateBlog(Blog blog);
+
 }

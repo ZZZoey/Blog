@@ -1,6 +1,7 @@
 package com.zoey.dao;
 
 import com.zoey.entity.Type;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,4 +20,7 @@ public interface TypeDao {
     int updateType(Type type);
 
     int deleteType(int typeId);
+
+    Type getTypeById(@Param("typeId") Integer typeId);
+
 }

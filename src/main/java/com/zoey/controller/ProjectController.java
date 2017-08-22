@@ -29,7 +29,7 @@ public class ProjectController {
 
     @RequestMapping("/project")
     public String project(Model model){
-        model.addAttribute("projectList",projectService.listProject());
+        model.addAttribute("projectList",projectService.listProject(new HashMap<String, Object>()));
         return "project";
     }
 

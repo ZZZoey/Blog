@@ -43,5 +43,13 @@ public class TypeServiceImpl implements TypeService {
         return typeDao.deleteType(typeId);
     }
 
+    public Type getTypeById(Integer blogId) {
+        return typeDao.getTypeById(blogId);
+    }
+
+    public List<Type> typeComboList(HashMap<String, Object> param) {
+        return typeDao.listType(param);
+    }
+
 
 }

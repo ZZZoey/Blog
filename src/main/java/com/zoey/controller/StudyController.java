@@ -33,7 +33,7 @@ public class StudyController {
         param.put("typeId",studyTypeId);
         param.put("start",pageBean.getStart());
         param.put("rows",pageBean.getPageSize());
-        model.addAttribute("BlogList",blogService.listBlog(param));
+        model.addAttribute("blogList",blogService.listBlog(param));
         model.addAttribute("pageNation", blogService.genPageNation(pageBean,studyTargetUrl+"?",param));
         return "list";
     }

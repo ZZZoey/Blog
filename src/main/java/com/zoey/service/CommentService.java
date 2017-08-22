@@ -17,7 +17,12 @@ public interface CommentService {
 
     String genPageNation(PageBean pageBean, String targetUrl);
 
-    Integer getTotalCommentCount(Boolean blogId);
+    Integer getTotalCommentCount(Boolean commentList);
 
     List<Comment> listCommentWithBlog(HashMap<String, Object> param);
+
+    int deleteComment(int commentId);
+
+    int deleteCommentByBlogId(Integer blogId);
+
 }

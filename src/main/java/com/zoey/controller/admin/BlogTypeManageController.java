@@ -78,7 +78,14 @@ public class BlogTypeManageController {
             ResponseUtil.write(response,JsonUtil.getJsonFromObject(Result.error()));
         }
 
+    }
 
-
+    @RequestMapping("/typeComboList")
+    public void tagComboList(HttpServletResponse response){
+        List<Type> listType=typeService.typeComboList(new HashMap<String, Object>());
+        Type type=new Type();
+        type.setName("请选择");
+        listType.add(0,type);
+        ResponseUtil.write(response,JsonUtil.getJsonFromObject(listType));
     }
 }

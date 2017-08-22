@@ -9,13 +9,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="title" column="title"/>
 		<result property="summary" column="summary"/>
 		<result property="coverImage" column="cover_image"/>
-		<result property="typeId" column="type_id"/>
 		<result property="createTime" column="create_time"/>
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
-	<select id="listProject" resultMap="ProjectResult">
+	<select id="listProject" parameterType="Map" resultMap="ProjectResult">
 		SELECT * FROM project
+		<if test="start!=null and rows!=null">
+			limit #{start} , #{rows}
+		</if>
 	</select>
+
+	<select id="getProjectCount" parameterType="Map" resultType="Integer">
+		SELECT count(*) FROM project
+	</select>
+
+	<insert id="addProject" parameterType="Project">
+		insert into project VALUES (null,#{title},#{summary},#{coverImage},#{createTime},#{updateTime})
+	</insert>
+
+	<update id="updateProject" parameterType="Project">
+		UPDATE project SET title=#{title},summary=#{summary},cover_image=#{coverImage}，create_time=#{createTime},update_time=#{updateTime}
+	</update>
+
+	<delete id="deleteProject" parameterType="Integer">
+		DELETE FROM project WHERE project_id=#{projectId}
+	</delete>
 
 </mapper> 

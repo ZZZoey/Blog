@@ -7,6 +7,7 @@ import com.zoey.entity.PageBean;
 import com.zoey.service.BlogService;
 import com.zoey.service.CommentService;
 import com.zoey.service.TagService;
+import com.zoey.service.TypeService;
 import com.zoey.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class BlogServiceImpl implements BlogService {
     private CommentService commentService;
 
     @Autowired
+    private TypeService typeService;
+
+    @Autowired
     private TagService tagService;
 
     public List<Blog> listBlogWithCommentCount(HashMap<String, Object> param) {
@@ -40,7 +44,9 @@ public class BlogServiceImpl implements BlogService {
     }
 
     public List<Blog> listBlog(HashMap<String, Object> param) {
-        return blogDao.listBlog(param);
+        List<Blog> blogList = blogDao.listBlog(param);
+        return blogList;
+
     }
 
 
@@ -65,4 +71,9 @@ public class BlogServiceImpl implements BlogService {
         blog.setTagList(tagService.listTag(param));
         return blog;
     }
+
+    public int deleteBlog(Integer blogId) {
+        return blogDao.deleteBlog(blogId);
+    }
+
 }

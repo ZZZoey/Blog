@@ -83,8 +83,7 @@
 	 }
 	 
 	function resetValue(){
-		 $("#typeName").val("");
-		 $("#orderNo").val("");
+		 $("#tagName").val("");
 	 }
 	
 	 function closeTagDialog(){
@@ -121,7 +120,7 @@
    	<table cellspacing="8px">
    		<tr>
    			<td>博客标签名称：</td>
-   			<td><input type="text" id="typeName" name="name" class="easyui-validatebox" required="true"/></td>
+   			<td><input type="text" id="tagName" name="name" class="easyui-validatebox" required="true"/></td>
    		</tr>
    	</table>
    </form>

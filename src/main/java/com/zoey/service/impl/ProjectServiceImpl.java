@@ -6,6 +6,7 @@ import com.zoey.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -18,7 +19,23 @@ public class ProjectServiceImpl implements ProjectService {
     @Autowired
     private ProjectDao projectDao;
 
-    public List<Project> listProject() {
-        return projectDao.listProject();
+    public List<Project> listProject(HashMap<String,Object> param) {
+        return projectDao.listProject(param);
+    }
+
+    public int getProjectCount() {
+        return projectDao.getProjectCount();
+    }
+
+    public int addProject(Project project) {
+        return projectDao.addProject(project);
+    }
+
+    public int updateProject(Project project) {
+        return projectDao.updateProject(project);
+    }
+
+    public int deleteProject(int projectId) {
+        return projectDao.deleteProject(projectId);
     }
 }

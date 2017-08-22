@@ -22,7 +22,7 @@
 		 }
 		 var strIds=[];
 		 for(var i=0;i<selectedRows.length;i++){
-			 strIds.push(selectedRows[i].id);
+			 strIds.push(selectedRows[i].commentId);
 		 }
 		 var ids=strIds.join(",");
 		 $.messager.confirm("系统提示","您确定要删除这<font color=red>"+selectedRows.length+"</font>条数据吗？",function(r){
@@ -71,7 +71,7 @@
 <body style="margin: 1px">
 <table id="dg" title="留言管理" class="easyui-datagrid"
    fitColumns="true" pagination="true" rownumbers="true"
-   url="${pageContext.request.contextPath}/admin/comment/list.do" fit="true" toolbar="#tb">
+   url="${pageContext.request.contextPath}/admin/message/list.do" fit="true" toolbar="#tb">
    <thead>
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>

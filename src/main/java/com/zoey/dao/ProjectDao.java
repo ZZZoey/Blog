@@ -2,6 +2,7 @@ package com.zoey.dao;
 
 import com.zoey.entity.Project;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,5 +10,15 @@ import java.util.List;
  */
 public interface ProjectDao {
 
-    List<Project> listProject();
+    List<Project> listProject(HashMap<String,Object> param);
+
+    int getProjectCount();
+
+    int addProject(Project project);
+
+    int updateProject(Project project);
+
+    int deleteProject(int projectId);
+    
+
 }

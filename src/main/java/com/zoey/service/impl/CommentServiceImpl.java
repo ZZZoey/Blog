@@ -47,9 +47,21 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> listCommentWithBlog(HashMap<String, Object> param) {
         List<Comment> commentList=listComment(param);
         for (Comment comment : commentList) {
-            Blog blog=blogService.getBlog(comment.getBlogId());
-            comment.setBlog(blog);
+            if(comment.getBlogId()!=null&&comment.getBlogId()!=0){
+                Blog blog=blogService.getBlog(comment.getBlogId());
+                comment.setBlog(blog);
+            }
+
         }
         return commentList;
     }
+
+    public int deleteComment(int commentId) {
+        return commentDao.deleteComment(commentId);
+    }
+
+    public int deleteCommentByBlogId(Integer blogId) {
+        return commentDao.deleteCommentByBlogId(blogId);
+    }
+
 }

@@ -13,17 +13,26 @@
 
 <script type="text/javascript">
 
-	function formatBlogType(val,row){
-		return val.typeName;
+	function formatType(val,row){
+		return val.name;
 	}
+
+    function formatTag(val,row){
+	    var result=[];
+	    for(var i=0;i<val.length;i++){
+            result.push(val[i].name)
+		}
+        return result.join(",");
+    }
 	
 	function formatTitle(val,row){
-		return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/"+row.id+".html'>"+val+"</a>"
+		return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/"+row.blogId+".html'>"+val+"</a>"
 	}
 	
 	function searchBlog(){
 		$("#dg").datagrid('load',{
-			"title":$("#s_title").val() 
+			"title":$("#s_title").val(),
+            "typeId":$("#s_typeId").combobox("getValue")
 		});
 	}
 	
@@ -35,7 +44,7 @@
 		 }
 		 var strIds=[];
 		 for(var i=0;i<selectedRows.length;i++){
-			 strIds.push(selectedRows[i].id);
+			 strIds.push(selectedRows[i].blogId);
 		 }
 		 var ids=strIds.join(",");
 		 $.messager.confirm("系统提示","您确定要删除这<font color=red>"+selectedRows.length+"</font>条数据吗？",function(r){
@@ -60,7 +69,7 @@
 			 return;
 		 }
 		 var row=selectedRows[0];
-		 window.parent.openTab('修改博客','modifyBlog.jsp?id='+row.id,'icon-writeblog');
+		 window.parent.openTab('修改博客','modifyBlog.jsp?id='+row.blogId,'icon-writeblog');
 	}
 	
 </script>
@@ -72,10 +81,11 @@
    <thead>
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>
-   		<th field="id" width="20" align="center">编号</th>
+   		<th field="blogId" width="20" align="center">编号</th>
    		<th field="title" width="200" align="center" formatter="formatTitle">标题</th>
-   		<th field="releaseDate" width="50" align="center">发布日期</th>
-   		<th field="blogType" width="50" align="center" formatter="formatBlogType">博客类别</th>
+   		<th field="createTime" width="50" align="center">发布日期</th>
+   		<th field="type" width="50" align="center" formatter="formatType">博客类别</th>
+		<th field="tagList" width="50" align="center" formatter="formatTag">博客标签</th>
    	</tr>
    </thead>
  </table>
@@ -86,6 +96,7 @@
  	</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
  	<div>
  		&nbsp;标题：&nbsp;<input type="text" id="s_title" size="20" onkeydown="if(event.keyCode==13) searchBlog()"/>
+		&nbsp;类别：&nbsp;<input class="easyui-combobox" id="s_typeId" name="s_typeId" data-options="editable:false,panelHeight:'auto',valueField:'typeId',textField:'name',url:'typeComboList.do'" onkeydown="if(event.keyCode==13) searchBlog()">
  		<a href="javascript:searchBlog()" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>
  	</div>
  </div>

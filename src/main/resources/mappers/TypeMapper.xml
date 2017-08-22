@@ -33,4 +33,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteType" parameterType="Integer">
 		DELETE FROM TYPE where type_id=#{typeId}
 	</delete>
+
+	<select id="getTypeById" parameterType="Integer" resultMap="TypeResult">
+		select * from type where type_id =#{typeId}
+	</select>
 </mapper> 

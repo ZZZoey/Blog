@@ -15,6 +15,10 @@ public interface CommentDao {
 
     List<Comment> listComment(HashMap<String,Object> param);
 
-    Integer getTotalCommentCount(@Param("comment") Boolean comment);
+    Integer getTotalCommentCount(@Param("commentList") Boolean commentList);
+
+    int deleteComment(int commentId);
+
+    int deleteCommentByBlogId(Integer blogId);
 
 }
