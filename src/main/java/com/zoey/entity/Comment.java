@@ -8,7 +8,6 @@ public class Comment extends BaseEntity{
     private String visitorIp;
     private String visitorName;
     private String email;
-    private String visitorImage;
     private String content;
     private Integer blogId;
     private Blog blog;
@@ -43,14 +42,6 @@ public class Comment extends BaseEntity{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getVisitorImage() {
-        return visitorImage;
-    }
-
-    public void setVisitorImage(String visitorImage) {
-        this.visitorImage = visitorImage;
     }
 
     public String getContent() {

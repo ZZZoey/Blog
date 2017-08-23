@@ -15,11 +15,11 @@
     <div class="leave-coment-form">
         <div class="agileits_heading_section">
             <h3 class="wthree_head">Leave Your Message</h3>
-            <p class="agileinfo_para">写下你想说的话吧</p>
+            <p class="agileinfo_para"><h5>写下你想说的话吧</h5></p>
         </div>
-        <form action="#" method="post">
-            <input type="text" name="v_name" placeholder="Name" required="">
-            <input type="email" name="v_email" placeholder="Email" required="">
+        <form action="addComment.do?blogId=0" method="post">
+            <input type="text" name="visitorName" placeholder="Name" required="">
+            <input type="email" name="email" placeholder="Email">
             <textarea name="content" placeholder="Your comment here..." required=""></textarea>
             <div class="w3_single_submit">
                 <input type="submit" value="Submit Comment">

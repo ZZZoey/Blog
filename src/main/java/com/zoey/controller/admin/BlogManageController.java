@@ -3,10 +3,7 @@ package com.zoey.controller.admin;
 import com.zoey.entity.Blog;
 import com.zoey.entity.PageBean;
 import com.zoey.entity.Result;
-import com.zoey.service.BlogService;
-import com.zoey.service.CommentService;
-import com.zoey.service.TagService;
-import com.zoey.service.TypeService;
+import com.zoey.service.*;
 import com.zoey.util.JsonUtil;
 import com.zoey.util.ResponseUtil;
 import com.zoey.util.StringUtil;
@@ -40,6 +37,9 @@ public class BlogManageController {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private BlogTagService blogTagService;
+
     @RequestMapping("/blog/list")
     public void listBlog(Integer page, Integer rows,String title,Integer typeId,HttpServletResponse response){
         if(!StringUtils.isEmpty(title)){
@@ -70,6 +70,7 @@ public class BlogManageController {
         int resultNums=0;
         for (String blogId: ids.split(",")) {
             commentService.deleteCommentByBlogId(Integer.parseInt(blogId));
+            blogTagService.deleteBlogTagByBlogId(Integer.parseInt(blogId));
             resultNums+=blogService.deleteBlog(Integer.parseInt(blogId));
         }
         if(resultNums>0){
@@ -79,23 +80,6 @@ public class BlogManageController {
         }
     }
 
-    /*@RequestMapping("/save")
-    public String save(Blog blog,HttpServletResponse response)throws Exception{
-        int resultTotal=0; // 操作的记录条数
-        if(blog.getBlogId()==null){
-            resultTotal=blogService.add(blog);
-            blogService.addTags();
-        }else{
-            resultTotal=blogService.update(blog);
-        }
-        JSONObject result=new JSONObject();
-        if(resultTotal>0){
-            result.put("success", true);
-        }else{
-            result.put("success", false);
-        }
-        ResponseUtil.write(response, result);
-        return null;
-    }*/
+
 
 }

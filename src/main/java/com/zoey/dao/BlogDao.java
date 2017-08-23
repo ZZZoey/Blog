@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface BlogDao {
 
+    int updateReadNum(int blogId);
+
     List<Blog> listBlog(HashMap<String,Object> param);
 
     List<FilingDate> listFilingDate();

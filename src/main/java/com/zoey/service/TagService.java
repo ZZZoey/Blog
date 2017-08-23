@@ -20,4 +20,5 @@ public interface TagService {
 
     int deleteTag(int tagId);
 
+    Tag getTagByTagName(String tagName);
 }

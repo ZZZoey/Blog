@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface BlogService {
 
+    int updateReadNum(int blogId);
+
     List<Blog> listBlogWithCommentCount(HashMap<String,Object> param);
 
     List<Blog> listBlog(HashMap<String,Object> param);
@@ -26,4 +28,7 @@ public interface BlogService {
 
     int deleteBlog(Integer blogId);
 
+    int addBlog(Blog blog);
+
+    int updateBlog(Blog blog);
 }

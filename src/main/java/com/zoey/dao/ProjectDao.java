@@ -19,6 +19,7 @@ public interface ProjectDao {
     int updateProject(Project project);
 
     int deleteProject(int projectId);
-    
 
+
+    Project getProject(int projectId);
 }

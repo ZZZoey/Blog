@@ -1,5 +1,6 @@
 package com.zoey.service;
 
+import com.zoey.entity.Blog;
 import com.zoey.entity.Comment;
 import com.zoey.entity.PageBean;
 
@@ -25,4 +26,5 @@ public interface CommentService {
 
     int deleteCommentByBlogId(Integer blogId);
 
+    int addCommentByBlodId(Comment comment);
 }

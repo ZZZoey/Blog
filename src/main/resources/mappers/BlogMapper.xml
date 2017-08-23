@@ -92,8 +92,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM blog WHERE blog_id=#{blogId}
 	</delete>
 
-	<insert id="addBlog" parameterType="Blog">
-		INSERT INTO blog VALUES (null,#{title},#{summary},#{author},#{cover_image},#{content})
+	<insert id="addBlog" parameterType="Blog" useGeneratedKeys="true" keyProperty="blogId">
+		INSERT INTO blog VALUES (null,#{title},#{summary},#{author},#{coverImage},#{content},0,0,#{recommend},#{projectId},#{typeId},now(),now())
 	</insert>
+
+	<update id="updateBlog" parameterType="Blog">
+		update blog set
+		<if test="coverImage!=null and coverImage!=''">
+			cover_image=#{coverImage},
+		</if>
+		title=#{title},summary=#{summary},author=#{author},content=#{content},is_recommend=#{recommend},project_id=#{projectId},type_id=#{typeId},update_time=now()
+		where blog_id=#{blogId}
+	</update>
+
+	<update id="updateReadNum" parameterType="Integer">
+		UPDATE blog SET read_num=read_num+1
+		WHERE blog_id=#{blogId}
+	</update>
 
 </mapper> 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoey.dao.BlogTagDao">
+
+	<resultMap type="BlogTag" id="BlogTagResult">
+		<result property="id" column="id"/>
+		<result property="tagId" column="tag_id"/>
+		<result property="blogId" column="blog_id"/>
+	</resultMap>
+
+	<insert id="addBlogTag" parameterType="BlogTag" >
+		INSERT INTO blog_tag VALUES (null,#{blogId},#{tagId})
+	</insert>
+
+	<delete id="deleteBlogTagByBlogId" parameterType="Integer">
+		delete from blog_tag WHERE blog_id=#{blogId}
+	</delete>
+
+	<select id="listTagsByBlogId" resultType="String">
+		SELECT t.name FROM tag t LEFT JOIN blog_tag bt ON t.`tag_id`=bt.`tag_id` WHERE bt.`blog_id`=#{blogId}
+	</select>
+
+
+</mapper> 

@@ -66,4 +66,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM comment WHERE blog_id=#{blogId}
 	</delete>
 
+	<insert id="addCommentByBlodId" parameterType="Comment">
+		INSERT INTO comment values(null,#{visitorIp},#{visitorName},#{email},#{content},#{blogId},now(),now())
+	</insert>
+
 </mapper> 

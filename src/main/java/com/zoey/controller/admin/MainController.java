@@ -71,7 +71,7 @@ public class MainController {
         List<Link> linkList = linkService.listLink();
         application.setAttribute("linkList",linkList);
 
-        List<Log> logList = logService.listLog();
+        List<Log> logList = logService.listLog(new HashMap<String, Object>());
         application.setAttribute("logList",logList);
 
         List<Tag> tagList = tagService.listTag(null);

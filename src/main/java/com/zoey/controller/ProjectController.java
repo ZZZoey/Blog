@@ -1,6 +1,7 @@
 package com.zoey.controller;
 
 import com.zoey.entity.PageBean;
+import com.zoey.entity.Project;
 import com.zoey.service.BlogService;
 import com.zoey.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,11 +39,14 @@ public class ProjectController {
         if(StringUtils.isEmpty(page)){
             page="1";
         }
+        Project project=projectService.getProject(Integer.parseInt(projectId));
         HashMap<String,Object> param=new HashMap<String, Object>();
         PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
         param.put("start",pageBean.getStart());
         param.put("rows",pageBean.getPageSize());
         param.put("projectId",projectId);
+        model.addAttribute("projectTitle",project.getTitle());
+        model.addAttribute("projectSummary",project.getSummary());
         model.addAttribute("blogList",blogService.listBlog(param));
         model.addAttribute("pageNation",blogService.genPageNation(pageBean,targetUrl+"?projectId="+projectId,param));
         return "project_content";

@@ -24,18 +24,18 @@
                     </div>
                     <div class="w3agile-middle">
                         <ul>
-                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><fmt:formatDate value="${blog.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></a></li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i><fmt:formatDate value="${blog.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></li>
                             <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>${blog.favor} LIKES</a></li>
-                            <li><a href="#"><i class="fa fa-comment" aria-hidden="true"></i>${blog.commentNum} COMMENTS</a></li>
+                            <li><i class="fa fa-comment" aria-hidden="true"></i>${blog.commentNum} COMMENTS</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="w3agile-bottom">
                     <div class="col-md-12 w3agile-right">
-                        <h3><a href="blogDetail.jsp">${blog.title}</a></h3>
+                        <h3><a href="blogDetail.html?blogId=${blog.blogId}">${blog.title}</a></h3>
                         <p>${blog.summary}</p>
-                        <a class="agileits w3layouts" href="blogDetail.jsp">Read More <span
+                        <a class="agileits w3layouts" href="blogDetail.html?blogId=${blog.blogId}">Read More <span
                                 class="glyphicon agileits w3layouts glyphicon-arrow-right"
                                 aria-hidden="true"></span></a>
                     </div>

@@ -19,7 +19,7 @@
     <!-- navigation -->
     <nav class="navbar navbar-default">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <!-- Brand and toggle get grouped for better mobile display（手机响应式） -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -36,11 +36,12 @@
                     <li><a href="study.html">学习笔记</a></li>
                     <li><a href="project.html">项目经验</a></li>
                     <li><a href="mood.html">杂文随笔</a></li>
-                    <li><a href="world.jsp">看世界</a></li>
+                    <li><a href="#">看世界</a></li>
                     <li><a href="message.html">留言墙</a></li>
                     <li><a href="about.jsp">About Me</a></li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- /.搜索框（准备改成博客点赞） -->
             <div class="w3_agile_login">
                 <div class="cd-main-header">
                     <a class="cd-search-trigger" href="#cd-search"> <span></span></a>
@@ -53,10 +54,9 @@
                 </div>
             </div>
             <div class="clearfix"> </div>
-
-        </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
-
     <!-- //navigation -->
 </header>
 <!-- //header -->

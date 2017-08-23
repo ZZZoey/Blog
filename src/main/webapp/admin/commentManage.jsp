@@ -47,13 +47,17 @@
 		}
 	}
 
-	function formatCommentDate(date,row) {
-	    var date=new Date(date);
+    function formatCommentDate(date,row) {
+        var date=new Date(date);
         var y = date.getFullYear();
         var m = date.getMonth() + 1;
         var d = date.getDate();
-        return y + '-' + (m < 10 ? ('0' + m) : m) + '-'
-            + (d < 10 ? ('0' + d) : d);
+        var hh = date.getHours();
+        var mm = date.getMinutes();
+        var ss = date.getSeconds();
+        return y +"-"+ (m < 10 ? ('0' + m) : m)
+            +"-"+ (d < 10 ? ('0' + d) : d) +" "+ (hh < 10 ? ('0' + hh) : hh)
+            +":"+ (mm < 10 ? ('0' + mm) : mm) +":"+ (ss < 10 ? ('0' + ss) : ss);
     }
 
 	function formatState(val,row){
@@ -80,8 +84,8 @@
 		<th field="visitorName" width="100" align="center">用户昵称</th>
 		<th field="content" width="200" align="center">评论内容</th>
    		<th field="blog" width="200" align="center" formatter="formatBlogTitle">博客标题</th>
-   		<th field="createTime" width="50" align="center" formatter="formatCommentDate">评论日期</th>
-   		<th field="state" width="50" align="center" formatter="formatState">评论状态</th>
+   		<th field="createTime" width="100" align="center" formatter="formatCommentDate">评论日期</th>
+   		<th field="state" width="100" align="center" formatter="formatState">评论状态</th>
    	</tr>
    </thead>
  </table>

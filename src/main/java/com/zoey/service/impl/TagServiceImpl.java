@@ -39,4 +39,8 @@ public class TagServiceImpl implements TagService {
         return tagDao.deleteTag(tagId);
     }
 
+    public Tag getTagByTagName(String tagName) {
+        return tagDao.getTagByTagName(tagName);
+    }
+
 }

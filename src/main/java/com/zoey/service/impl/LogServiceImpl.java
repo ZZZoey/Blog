@@ -18,7 +18,19 @@ public class LogServiceImpl implements LogService {
 
     @Autowired
     private LogDao logDao;
-    public List<Log> listLog() {
-        return logDao.listLog();
+    public List<Log> listLog(HashMap<String,Object> param) {
+        return logDao.listLog(param);
+    }
+
+    public int addLog(Log log) {
+        return logDao.addLog(log);
+    }
+
+    public int updateLog(Log log) {
+        return logDao.updateLog(log);
+    }
+
+    public int deleteLog(int logId) {
+        return logDao.deleteLog(logId);
     }
 }

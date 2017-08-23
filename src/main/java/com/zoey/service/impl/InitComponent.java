@@ -32,6 +32,7 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
         LogService logService=(LogService) applicationContext.getBean("logService");
         TagService tagService=(TagService) applicationContext.getBean("tagService");
         CommentService commentService=(CommentService) applicationContext.getBean("commentService");
+        VisitorService visitorService=(VisitorService) applicationContext.getBean("visitorService");
 
         HashMap<String,Object> recommendParam=new HashMap<String,Object>();
         recommendParam.put("recommend",true);
@@ -53,7 +54,7 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
         List<Link> linkList = linkService.listLink();
         application.setAttribute("linkList",linkList);
 
-        List<Log> logList = logService.listLog();
+        List<Log> logList = logService.listLog(new HashMap<String, Object>());
         application.setAttribute("logList",logList);
 
         List<Tag> tagList = tagService.listTag(null);
@@ -70,6 +71,9 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 
         int messageCount=commentService.getTotalCommentCount(false);
         application.setAttribute("messageCount",messageCount);
+
+        int visitCount=visitorService.getTotalCount();
+        application.setAttribute("visitCount",visitCount);
 
     }
 

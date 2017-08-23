@@ -14,7 +14,7 @@
             <h2 class="footer-title">博主名片</h2>
             <p><span><i class="fa fa-user" aria-hidden="true"></i></span>网名：Zoey</p>
             <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>坐标：广东</p>
-            <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">邮箱: 1439685884@qq.com</a></p>
+            <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span>邮箱: 1439685884@qq.com</p>
             <p><span><i class="fa fa-star" aria-hidden="true"></i></span>学校：华南师范大学</p>
         </div>
         <div class="col-md-4 wthree-footer">
@@ -33,7 +33,7 @@
                     <td><p><span><i class="fa fa-heart" aria-hidden="true"></i></span><a>点赞：1次</a></p></td>
                 </tr>
                 <tr>
-                    <td><p><span><i class="fa fa-eye" aria-hidden="true"></i></span><a>访问：1次</a></p></td>
+                    <td><p><span><i class="fa fa-eye" aria-hidden="true"></i></span><a>访问：${visitCount}次</a></p></td>
                     <td><p><span><i class="fa fa-spinner" aria-hidden="true"></i></span><a id="showsectime"></a></p></td>
                 </tr>
             </table>

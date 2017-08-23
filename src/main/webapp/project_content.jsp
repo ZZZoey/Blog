@@ -14,8 +14,8 @@
     <div class="banner-btm-agile">
         <!-- //项目导航 -->
         <div class="agileits_heading_section">
-            <h3 class="wthree_head">Features</h3>
-            <p class="agileinfo_para">Nam tempus lobortis sem non ornare in aliquet egestas, nisi mi vestibulum.</p>
+            <h3 class="wthree_head">${projectTitle}</h3>
+            <p class="agileinfo_para">${projectSummary}</p>
         </div>
         <div class="col-md-12" style="margin-bottom: 3em">
             <div class="w3_testimonials_grids">
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-8 agile_classes_grid1_left">
-                                <a href="#"><h4>${blog.title}</h4></a>
+                                <a href="blogDetail.html?blogId=${blog.blogId}"><h4>${blog.title}</h4></a>
                                 <p>${blog.summary}</p>
                             </div>
                             <div class="clearfix"></div>

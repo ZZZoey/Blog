@@ -17,84 +17,136 @@
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
 <script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
-	
-	function submitData(){
+
+	function checkData(){
 		var title=$("#title").val();
-		var blogTypeId=$("#blogTypeId").combobox("getValue");
+		var typeId=$("#typeId").combobox("getValue");
+		var projectId=$("#projectId").combobox("getValue");
 		var content=UE.getEditor('editor').getContent();
-		var keyWord=$("#keyWord").val();
-		
+		var tags=$("#tags").val();
+
 		if(title==null || title==''){
 			alert("请输入标题！");
-		}else if(blogTypeId==null || blogTypeId==''){
+			return false;
+		}else if(typeId==null || typeId==''){
 			alert("请选择博客类别！");
-		}else if(content==null || content==''){
-			alert("请输入内容！");
-		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
-				if(result.success){
-					alert("博客发布成功！");
-					resetValue();
-				}else{
-					alert("博客发布失败！");
-				}
-			},"json");
+            return false;
+		}else if(typeId==2){
+		    if(projectId==null|| projectId==''){
+		        alert("请选择所属项目");
+                return false;
+			}
 		}
+		else if(tags==null || tags==''){
+		    alert("请填写博客标签");
+            return false;
+		}
+		else if(content==null || content==''){
+			alert("请输入内容！");
+            return false;
+		}
+        $("#content").val(UE.getEditor('editor').getContent());
+		return true;
 	}
-	
+
 	// 重置数据
 	function resetValue(){
 		$("#title").val("");
-		$("#blogTypeId").combobox("setValue","");
+		$("#typeId").combobox("setValue","");
+		$("#projectId").combobox("setValue","");
 		UE.getEditor('editor').setContent("");
-		$("#keyWord").val("");
+		$("#tags").val("");
 	}
-	
+
+
+    $(document).ready(function () {
+        var tId='${blog.typeId}'
+		if(tId==2){
+            $("#projectCombo").show();
+        }
+        $("#typeId").combobox({
+            onChange: function (n, o) {
+                var typeId=$("#typeId").combobox("getValue");
+                if(typeId==2){
+                    $("#projectCombo").show();
+                }
+            }
+        });
+	})
+
 </script>
 </head>
 <body style="margin: 10px">
 <div id="p" class="easyui-panel" title="编写博客" style="padding: 10px">
+	<form action="blog/save.do" method="post" onsubmit="return checkData()" enctype="multipart/form-data">
  	<table cellspacing="20px">
    		<tr>
    			<td width="80px">博客标题：</td>
-   			<td><input type="text" id="title" name="title" style="width: 400px;"/></td>
+   			<td><input type="text" id="title" name="title" style="width: 400px;" value="${blog.title}"/><input type="hidden" id="blogId" name="blogId"  value="${blog.blogId}"/></td>
    		</tr>
+		<tr>
+			<td width="80px">作者：</td>
+			<td><input type="text" id="author" name="author" style="width: 400px;" value="Zoey"/></td>
+		</tr>
    		<tr>
    			<td>所属类别：</td>
    			<td>
    				<select class="easyui-combobox" style="width: 154px" id="typeId" name="typeId" editable="false" panelHeight="auto" >
-					<option value="">请选择博客类别...</option>	
+					<option value="">请选择博客类别...</option>
 				    <c:forEach var="type" items="${typeComboList }">
-				    	<option value="${type.typeId }">${type.name }</option>
-				    </c:forEach>			
+				    	<option value="${type.typeId }" ${blog.typeId==type.typeId?'selected':''} >${type.name }</option>
+				    </c:forEach>
                 </select>
    			</td>
    		</tr>
+		<tr id="projectCombo" style="display: none">
+			<td>所属项目：</td>
+			<td>
+				<select class="easyui-combobox" style="width: 154px" id="projectId" name="projectId" editable="false" panelHeight="auto" >
+					<option value="">请选择所属项目...</option>
+					<c:forEach var="project" items="${projectComboList }">
+						<option value="${project.projectId }" ${blog.projectId==project.projectId?'selected':''}>${project.title }</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>是否推荐：</td>
+			<td><input type="radio" name="recommend" value="1" ${blog.recommend==true?'checked':''}>是 <input type="radio" name="recommend" value="0" ${blog.recommend==false?'checked':''}> 否</td>
+		</tr>
 		<tr>
 			<td>标签：</td>
-			<td><input type="text" id="tags" name="tags" style="width: 400px;"/>&nbsp;(多个标签中间用逗号隔开)</td>
+			<td><input type="text" id="tags" name="tags" style="width: 400px;" value="${blog.tags}"/>&nbsp;(多个标签中间用逗号隔开)</td>
+		</tr>
+        <tr>
+            <td>封面：</td>
+            <td><input type="file" id="file" name="file"/></td>
+        </tr>
+		<tr>
+			<td>摘要：</td>
+			<td><textarea id="summary" name="summary" rows="7" cols="30" >${blog.summary}</textarea></td>
 		</tr>
    		<tr>
    			<td valign="top">博客内容：</td>
    			<td>
-				   <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+                <input id="content" name="content" type="hidden" />
+				   <script id="editor" type="text/plain" style="width:100%;height:500px;"> ${blog.content}</script>
    			</td>
    		</tr>
    		<tr>
    			<td></td>
    			<td>
-   				<a href="javascript:submitData()" class="easyui-linkbutton" data-options="iconCls:'icon-submit'">发布博客</a>
+   				<button  class="easyui-linkbutton" data-options="iconCls:'icon-submit'" type="submit">发布博客</button>
    			</td>
    		</tr>
-   	</table>
+   	</table> </form>
  </div>
- 
+
  <script type="text/javascript">
 
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
     var ue = UE.getEditor('editor');
-
 
 </script>
 </body>

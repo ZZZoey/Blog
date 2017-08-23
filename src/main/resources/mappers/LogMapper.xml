@@ -11,7 +11,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="updateTime" column="update_time"/>
 	</resultMap>
 
-	<select id="listLog" resultMap="LogResult">
+	<select id="listLog" parameterType="Log" resultMap="LogResult">
 		SELECT * FROM log ORDER BY create_time DESC
+		<if test="start!=null and rows!=null">
+			limit #{start},#{rows}
+		</if>
 	</select>
+
+	<insert id="addLog" parameterType="Log">
+		INSERT INTO log VALUES (null,#{content},now(),now())
+	</insert>
+
+	<update id="updateLog" parameterType="Log">
+		update log SET content=#{content},update_time=now()
+		WHERE log_id=#{logId}
+	</update>
+
+	<delete id="deleteLog" parameterType="Integer">
+		DELETE FROM log WHERE log_id=#{logId}
+	</delete>
 </mapper>

@@ -69,7 +69,7 @@
 			 return;
 		 }
 		 var row=selectedRows[0];
-		 window.parent.openTab('修改博客','modifyBlog.jsp?id='+row.blogId,'icon-writeblog');
+		 window.parent.openTab('修改博客','writeBlog.do?blogId='+row.blogId,'icon-writeblog');
 	}
 	
 </script>

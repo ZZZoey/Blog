@@ -1,11 +1,8 @@
-package com.zoey.dao;
+package com.zoey.service;
 
 import com.zoey.entity.Visitor;
 
-/**
- * Created by LSY on 2017/8/17.
- */
-public interface VisitorDao {
+public interface VisitorService {
 
     int getIpCount(String visitorIp);
 

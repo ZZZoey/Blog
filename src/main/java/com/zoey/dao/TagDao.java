@@ -20,4 +20,5 @@ public interface TagDao {
 
     int deleteTag(int tagId);
 
+    Tag getTagByTagName(String tagName);
 }

@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="col-md-3 w3agile_blog_left">
+    <%--搜索框--%>
     <div class="wthreesearch">
         <form action="search.do" method="post">
             <input type="search" name="s_title" placeholder="Search here" required="">
@@ -16,7 +17,6 @@
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </form>
-
     </div>
 
     <div class="agileinfo_calender">
@@ -26,14 +26,15 @@
             <h5><i class="fa fa-comments" aria-hidden="true"></i>扫码关注个人公众号，得到及时的文章推送信息。</h5>
         </div>
     </div>
+
     <div class="w3ls_popular_posts">
         <h3>推荐博文</h3>
         <c:forEach var="recommendBlog" items="${recommendBlogList}">
             <div class="agileits_popular_posts_grid">
                 <div class="w3agile_special_deals_grid_left_grid">
-                    <a href="singlepage.jsp"><img src="${recommendBlog.coverImage}" class="img-responsive" alt=""/></a>
+                    <a href="blogDetail.html?blogId=${recommendBlog.blogId}"><img src="${recommendBlog.coverImage}" class="img-responsive" alt=""/></a>
                 </div>
-                <h4><a href="singlepage.jsp">${recommendBlog.title}</a></h4>
+                <h4><a href="blogDetail.html?blogId=${recommendBlog.blogId}">${recommendBlog.title}</a></h4>
                 <h5><i class="fa fa-calendar" aria-hidden="true"></i><fmt:formatDate value="${recommendBlog.createTime}"
                                                                                      pattern="yyyy-MM-dd HH:mm:ss"/>
                 </h5>
@@ -47,11 +48,11 @@
             <div class="agileits_recent_posts_grid">
                 <div class="agileits_recent_posts_gridl">
                     <div class="w3agile_special_deals_grid_left_grid">
-                        <a href="singlepage.jsp"><img src="${hotBlog.coverImage}" class="img-responsive" alt=""/></a>
+                        <a href="blogDetail.html?blogId=${hotBlog.blogId}"><img src="${hotBlog.coverImage}" class="img-responsive" alt=""/></a>
                     </div>
                 </div>
                 <div class="agileits_recent_posts_gridr">
-                    <h4><a href="singlepage.jsp">${hotBlog.title}</a></h4>
+                    <h4><a href="blogDetail.html?blogId=${hotBlog.blogId}">${hotBlog.title}</a></h4>
                     <h5><i class="fa fa-calendar" aria-hidden="true"></i><fmt:formatDate value="${hotBlog.createTime}"
                                                                                          pattern="yyyy-MM-dd HH:mm:ss"/>
                     </h5>

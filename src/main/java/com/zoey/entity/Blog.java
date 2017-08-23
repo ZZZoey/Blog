@@ -159,4 +159,19 @@ public class Blog extends BaseEntity{
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+
+    public Blog() {
+    }
+
+    public Blog(Integer blogId,String title, String summary, String author, String content, Boolean recommend, Integer projectId, Integer typeId) {
+        this.blogId=blogId;
+        this.title = title;
+        this.summary = summary;
+        this.author = author;
+        this.content = content;
+        this.recommend = recommend;
+        this.projectId = projectId;
+        this.typeId = typeId;
+    }
 }

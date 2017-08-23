@@ -25,15 +25,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<insert id="addProject" parameterType="Project">
-		insert into project VALUES (null,#{title},#{summary},#{coverImage},#{createTime},#{updateTime})
+		insert into project VALUES (null,#{title},#{summary},#{coverImage},now(),now())
 	</insert>
 
 	<update id="updateProject" parameterType="Project">
-		UPDATE project SET title=#{title},summary=#{summary},cover_image=#{coverImage}，create_time=#{createTime},update_time=#{updateTime}
+		UPDATE project SET title=#{title},summary=#{summary},cover_image=#{coverImage},update_time=#{updateTime}
+		WHERE project_id=#{projectId}
 	</update>
 
 	<delete id="deleteProject" parameterType="Integer">
 		DELETE FROM project WHERE project_id=#{projectId}
 	</delete>
+
+	<select id="getProject" parameterType="Integer" resultMap="ProjectResult">
+		SELECT * FROM project WHERE project_id=#{projectId}
+	</select>
 
 </mapper> 

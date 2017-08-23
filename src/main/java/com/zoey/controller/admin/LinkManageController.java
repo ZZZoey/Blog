@@ -27,7 +27,6 @@ public class LinkManageController {
 
     @RequestMapping("/link/list")
     public void listLink(Integer page, Integer rows, HttpServletResponse response){
-        PageBean pageBean=new PageBean(page,rows);
         List<Link> linkList=linkService.listLink();
         int total=linkList.size();
         HashMap<String,Object> result=new HashMap<String, Object>();

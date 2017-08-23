@@ -20,4 +20,5 @@ public interface ProjectService {
 
     int deleteProject(int projectId);
 
+    Project getProject(int projectId);
 }

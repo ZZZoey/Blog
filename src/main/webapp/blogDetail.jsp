@@ -31,10 +31,10 @@
                 <div class="comments">
                     <div class="leave-coment-form">
                         <h3>评论</h3>
-                        <form action="#" method="post">
-                            <input type="text" name="Name" placeholder="Name" required="">
-                            <input type="email" name="Email" placeholder="Email" required="">
-                            <textarea name="Message" placeholder="Your comment here..." required=""></textarea>
+                        <form action="addComment.do?blogId=${blog.blogId}" method="post">
+                            <input type="text" name="visitorName" placeholder="Name" required="">
+                            <input type="email" name="email" placeholder="Email">
+                            <textarea name="content" placeholder="Your comment here..." required=""></textarea>
                             <div class="w3_single_submit">
                                 <input type="submit" value="Submit Comment">
                             </div>

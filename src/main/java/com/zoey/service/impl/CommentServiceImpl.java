@@ -36,7 +36,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     public String genPageNation(PageBean pageBean, String targetUrl) {
-        Integer commentCount = commentDao.getCommentCount(null);
+        Integer commentCount = commentDao.getCommentCount(0);
         return PageUtil.genPageNation(pageBean,commentCount,targetUrl);
     }
 
@@ -62,6 +62,10 @@ public class CommentServiceImpl implements CommentService {
 
     public int deleteCommentByBlogId(Integer blogId) {
         return commentDao.deleteCommentByBlogId(blogId);
+    }
+
+    public int addCommentByBlodId(Comment comment) {
+        return commentDao.addCommentByBlodId(comment);
     }
 
 }

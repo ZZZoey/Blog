@@ -33,6 +33,10 @@ public class BlogServiceImpl implements BlogService {
     @Autowired
     private TagService tagService;
 
+    public int updateReadNum(int blogId) {
+        return blogDao.updateReadNum(blogId);
+    }
+
     public List<Blog> listBlogWithCommentCount(HashMap<String, Object> param) {
         List<Blog> blogList = blogDao.listBlog(param);
         for(Blog blog:blogList){
@@ -74,6 +78,14 @@ public class BlogServiceImpl implements BlogService {
 
     public int deleteBlog(Integer blogId) {
         return blogDao.deleteBlog(blogId);
+    }
+
+    public int addBlog(Blog blog) {
+        return blogDao.addBlog(blog);
+    }
+
+    public int updateBlog(Blog blog) {
+        return blogDao.updateBlog(blog);
     }
 
 }

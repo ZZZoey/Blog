@@ -1,5 +1,6 @@
 package com.zoey.dao;
 
+import com.zoey.entity.Blog;
 import com.zoey.entity.Comment;
 import org.apache.ibatis.annotations.Param;
 
@@ -20,5 +21,7 @@ public interface CommentDao {
     int deleteComment(int commentId);
 
     int deleteCommentByBlogId(Integer blogId);
+
+    int addCommentByBlodId(Comment comment);
 
 }

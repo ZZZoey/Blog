@@ -10,4 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="createTime" column="create_time"/>
 	</resultMap>
 
+	<select id="getIpCount" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM visitor WHERE create_time>=DATE_SUB(NOW(),INTERVAL 5 MINUTE) AND visitor_ip=#{visitorIp};
+	</select>
+
+	<insert id="addVisitor" parameterType="String">
+		INSERT INTO visitor VALUES (null,#{visitorIp},now())
+	</insert>
+
+	<select id="getTotalCount" resultType="Integer">
+		SELECT COUNT(*) FROM visitor
+	</select>
+
 </mapper> 

@@ -38,4 +38,8 @@ public class ProjectServiceImpl implements ProjectService {
     public int deleteProject(int projectId) {
         return projectDao.deleteProject(projectId);
     }
+
+    public Project getProject(int projectId) {
+        return projectDao.getProject(projectId);
+    }
 }

@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT count(*) from tag
 	</select>
 
-	<insert id="addTag" parameterType="Tag">
+	<insert id="addTag" parameterType="Tag" useGeneratedKeys="true" keyProperty="tagId">
 		INSERT INTO tag VALUES (null,#{name},#{createTime},#{updateTime})
 	</insert>
 
@@ -37,4 +37,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteTag" parameterType="Integer">
 		DELETE FROM tag where tag_id=#{tagId}
 	</delete>
+
+	<select id="getTagByTagName" parameterType="String" resultMap="TagResult">
+		select * from tag where name=#{tagName}
+	</select>
 </mapper> 

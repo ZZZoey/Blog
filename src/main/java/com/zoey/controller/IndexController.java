@@ -2,6 +2,8 @@ package com.zoey.controller;
 
 import com.zoey.entity.PageBean;
 import com.zoey.service.BlogService;
+import com.zoey.service.VisitorService;
+import com.zoey.util.IpUtil;
 import com.zoey.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 /**
@@ -25,9 +28,17 @@ public class IndexController {
     @Autowired
     private BlogService blogService;
 
+    @Autowired
+    private VisitorService visitorService;
+
 
     @RequestMapping("/index")
-    public String goIndex(String page,Model model){
+    public String goIndex(String page, Model model, HttpServletRequest request){
+        String visitorIp= IpUtil.getIpAddress(request);
+        if(visitorService.getIpCount(visitorIp)==0){
+            visitorService.addVisitor(visitorIp);
+            request.getSession().getServletContext().setAttribute("visitCount",visitorService.getTotalCount());
+        }
         if(StringUtils.isEmpty(page)){
             page="1";
         }
