@@ -21,7 +21,7 @@ public class StudyController {
 
     private static Integer studyTypeId=1;
     private static String studyTargetUrl="study.html";
-    private static Integer pageSize=4;
+    private static Integer pageSize=9;
 
     @RequestMapping("/study")
     public String study(String page,Model model){

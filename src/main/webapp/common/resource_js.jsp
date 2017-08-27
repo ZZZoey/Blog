@@ -163,7 +163,7 @@ function hideURLbar() {
         return date;
     }
     function showsectime() {
-        var birthDay =NewDate("2017-08-01");
+        var birthDay =NewDate("2017-08-27");
         var today=new Date();
         var timeold=today.getTime()-birthDay.getTime();
 

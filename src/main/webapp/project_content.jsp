@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
         </div>
         <div class="col-md-12" style="margin-bottom: 3em">
             <div class="w3_testimonials_grids">
-                <c:forEach var="blog" items="${blogList}">
+                <c:forEach var="blog" items="${blogList}" varStatus="items">
                     <div class="col-md-6 w3_agile_classes_grid">
                         <div class="agile_classes_grid1">
                             <div class="col-xs-4 agile_classes_grid1_right">
@@ -28,17 +29,20 @@
                                 </div>
                             </div>
                             <div class="col-xs-8 agile_classes_grid1_left">
-                                <a href="blogDetail.html?blogId=${blog.blogId}"><h4>${blog.title}</h4></a>
-                                <p>${blog.summary}</p>
+                                <a href="blogDetail.html?blogId=${blogList[fn:length(blogList) - 1 - items.index].blogId}"><h4>${blogList[fn:length(blogList) - 1 - items.index].title}</h4></a>
+                                <p>${blogList[fn:length(blogList) - 1 - items.index].summary}</p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                 </c:forEach>
-                <nav class="events agileits">
-                    ${pageNation}
-                </nav>
+
                 <div class="clearfix"></div>
+                <div>
+                    <nav class="events agileits">
+                        ${pageNation}
+                    </nav>
+                </div>
             </div>
         </div>
         <!-- //btm-wthree-left -->

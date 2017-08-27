@@ -20,7 +20,7 @@ import java.util.HashMap;
 @Controller
 public class IndexController {
 
-    private Integer pageSize=4;
+    private Integer pageSize=9;
     private String tagTargetUrl="tag.html";
     private String filingDateTargetUrl="filingDate.html";
     private String searchTargetUrl="search.html";
@@ -43,7 +43,7 @@ public class IndexController {
             page="1";
         }
         HashMap<String,Object> param=new HashMap<String, Object>();
-        PageBean pageBean=new PageBean(Integer.parseInt(page),pageSize);
+        PageBean pageBean=new PageBean(Integer.parseInt(page),4);
         param.put("start",pageBean.getStart());
         param.put("rows",pageBean.getPageSize());
         model.addAttribute("blogList",blogService.listBlogWithCommentCount(param));

@@ -6,6 +6,11 @@
 <html lang="en">
 <head>
     <jsp:include page="common/resource_css.jsp"></jsp:include>
+    <style>
+        .single-left1 img{
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
 <!-- header -->
@@ -25,7 +30,7 @@
                         <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="#">${blog.commentList.size()}
                             Comments</a></li>
                     </ul>
-                    <p>${blog.content}</p>
+                    <div><p>${blog.content}</p></div>
                 </div>
 
                 <div class="comments">

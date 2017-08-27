@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class MoodController {
 
     private static Integer moodTypeId=3;
-    private static Integer pageSize=4;
+    private static Integer pageSize=9;
     private static String moodTargetUrl="mood.html";
 
     @Autowired
